@@ -1,0 +1,11 @@
+[DEFAULT]
+BASEURL=http://www.gifninja.com/CreateAGif.aspx
+[DOC_ctl00_contentPlaceHolder_createAGifUserControl_progressBar]
+BASEURL=http://www.gifninja.com/NeatUpload/Progress.aspx?postBackID=A09BD43781E661E5FF9A5CF0DF8BC855&canScript=true&canCancel=true
+ORIGURL=/NeatUpload/Progress.aspx?postBackID=A09BD43781E661E5FF9A5CF0DF8BC855&canScript=false&canCancel=false
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,2
+[InternetShortcut]
+URL=http://gifninja.com/
+IDList=
+HotKey=0

@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS三層式選單範例</title>
+<style type="text/css"> 
+#info {height:600px;}
+ 
+.container {width:695px; background:#eee url(sand.jpg); margin:50px auto; padding:10px; border:1px solid #000;}
+.menu {font-family: arial, sans-serif; width:131px; height:217px; position:relative; margin:0; font-size:11px;}
+.menu ul li a, .menu ul li a:visited {display:block; text-decoration:none; color:#000; width:120px; height:30px; border:1px solid #eee; border-width:1px 1px 0 0; background:#c9c9a7; line-height:29px; font-size:11px; padding-left:10px;}
+.menu ul {padding:0; margin:0;list-style-type: none;}
+.menu ul li {float:left; position:relative;}
+.menu ul li ul {display: none;}
+ 
+.menu table {border-collapse:collapse; border:0; margin:0; padding:0;}
+ 
+.menu ul li:hover a,
+.menu ul li a:hover {color:#fff; background:#b3ab79;}
+ 
+.menu ul li:hover ul,
+.menu ul li a:hover ul {display:block; position:absolute; top:0; left:131px; width:565px; background: transparent;}
+ 
+.menu ul li:hover ul li,
+.menu ul li a:hover ul li {float:left;}
+ 
+.menu ul li:hover ul li a,
+.menu ul li a:hover ul li a {display:block; color:#000; width:130px; float:left; background:#c9c9a7;}
+ 
+.menu ul li:hover ul li a.sub,
+.menu ul li a:hover ul li a.sub {background:#dfc184 url(../graphics/drop.gif) bottom right no-repeat; color:#000;}
+ 
+.menu ul li:hover ul li a:hover,
+.menu ul li a:hover ul li a:hover {background:#dfc184; color:#000;}
+ 
+.menu ul li:hover ul li ul,
+.menu ul li a:hover ul li a ul {visibility:hidden; position:absolute; width:200px;}
+ 
+.menu ul li:hover ul li:hover ul,
+.menu ul li a:hover ul li a:hover ul {visibility:visible; left:-1px; top:31px; color:#000;}
+ 
+.menu ul li:hover ul li:hover ul li a,
+.menu ul li a:hover ul li a:hover ul li a {display:block; width:200px; background:#dfc184; color:#000; border-left:1px solid #eee;}
+ 
+.menu ul li:hover ul li:hover ul li a:hover,
+.menu ul li a:hover ul li a:hover ul li a:hover {background:#bd8d5e; color:#fff;}
+ 
+</style>
+</head>
+
+<body>
+<div class="menu">
+ 
+<ul>
+	<li><a href="../menu/index.html">DEMOS<!--[if IE 7]><!--></a><!--<![endif]-->
+	<!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul>
+		<li><a href="home.html" title="The zero dollar ads page">zero dollars</a></li>
+		<li><a href="http://google.com" title="Wrapping text around images">wrapping text</a></li>
+		<li><a class="sub" href="../menu/hover_click.html" title="Hover/click with no active/focus borders">HOVER/CLICK<!--[if IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><![endif]-->
+		<ul>
+			<li><a href="../menu/form.html" title="Styling forms">styled form</a></li>
+			<li><a href="../menu/nodots.html" title="Removing active/focus borders">active focus</a></li>
+			<li><a href="../menu/hover_click.html" title="Hover/click with no active/focus borders">hover/click</a></li>
+		</ul>
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+		</li>
+		<li><a href="../menu/shadow_boxing.html" title="Multi-position drop shadow">shadow boxing</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li><a href="index.html">MENUS<!--[if IE 7]><!--></a><!--<![endif]-->
+	<!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul>
+		<li><a href="spies.html" title="a coded list of spies">spies menu</a></li>
+		<li><a href="vertical.html" title="a horizontal vertical menu">vertical menu</a></li>
+		<li><a href="expand.html" title="an enlarging unordered list">enlarging list</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li><a href="../layouts/index.html">LAYOUTS<!--[if IE 7]><!--></a><!--<![endif]-->
+	<!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul>
+		<li><a href="../layouts/bodyfix.html" title="Cross browser fixed layout">Fixed 1</a></li>
+		<li><a href="../layouts/body2.html" title="Cross browser fixed layout">Fixed 2</a></li>
+		<li><a href="../layouts/body4.html" title="Cross browser fixed layout">Fixed 3</a></li>
+		<li><a href="../layouts/body5.html" title="Cross browser fixed layout">Fixed 4</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li><a href="../boxes/index.html">BOXES<!--[if IE 7]><!--></a><!--<![endif]-->
+	<!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul>
+		<li><a href="spies.html" title="a coded list of spies">spies menu</a></li>
+		<li><a class="sub" href="../menu/hover_click.html" title="Hover/click with no active/focus borders">HOVER/CLICK<!--[if IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><![endif]-->
+		<ul>
+			<li><a href="../menu/form.html" title="Styling forms">styled form</a></li>
+			<li><a href="../menu/hover_click.html" title="Hover/click with no active/focus borders">hover/click</a></li>
+		</ul>
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+		</li>
+		<li><a href="expand.html" title="an enlarging unordered list">enlarging list</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li><a href="../mozilla/index.html">MOZILLA<!--[if IE 7]><!--></a><!--<![endif]-->
+	<!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul>
+		<li><a href="../mozilla/dropdown.html" title="A drop down menu">drop down menu</a></li>
+		<li><a href="../mozilla/cascade.html" title="A cascading menu">cascading menu</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li><a href="../ie/index.html">EXPLORER<!--[if IE 7]><!--></a><!--<![endif]-->
+	<!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul>
+		<li><a href="../ie/exampleone.html" title="Example one">example one</a></li>
+		<li><a href="../ie/weft.html" title="Weft fonts">weft fonts</a></li>
+		<li><a href="../ie/exampletwo.html" title="Vertical align">vertical align</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li><a href="../opacity/index.html">OPACITY<!--[if IE 7]><!--></a><!--<![endif]-->
+	<!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul>
+		<li><a href="../opacity/colours.html" title="colour wheel">opaque colours</a></li>
+		<li><a href="../opacity/picturemenu.html" title="a menu using opacity">opaque menu</a></li>
+		<li><a href="../opacity/png.html" title="partial opacity">partial opacity</a></li>
+		<li><a href="../opacity/png2.html" title="partial opacity II">partial opacity II</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+</ul>
+</div>
+
+
+</body>
+</html>

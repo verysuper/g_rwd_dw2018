@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ul li {
+	float: left;
+}
+ul li a {
+	width: 100px;
+	height: 50px;
+	display: block;
+	line-height: 50px;
+	overflow: hidden;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+}
+ul li a:hover {
+	height: 150px;
+}
+ul li a div {
+	color: #fff;
+	line-height: 16px;
+	font-weight: bold;
+	margin-top: 73px;
+	padding-top: 7px;
+	border-top: 1px dotted #fff;
+}
+.t1 {
+	background: #08f2d6 url(01.gif);
+}
+.t2 {
+	background: #1209f1 url(02.gif);
+}
+.t3 {
+	background: #a202e2 url(03.gif);
+}
+.t4 {
+	background: #f4e603 url(04.gif);
+}
+.t5 {
+	background: #55df07 url(05.gif);
+}
+.t6 {
+	background: #02a8f3 url(06.gif);
+}
+.t7 {
+	background: #f6025e url(07.gif);
+}

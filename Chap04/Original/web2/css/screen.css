@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 100%;
+	color: #333;
+	background-color: #585858;
+	margin: 0px;
+}
+.homeBg {
+	background-attachment: scroll;
+	background-image: url(../images/layout/home_bg.jpg);
+	background-repeat: repeat-x;
+	background-position: center top;
+	background-color: #3B2203;
+}
+
+#homeWrapper {
+	width: 770px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#homeWrapper #homeHeader {
+	background-attachment: scroll;
+	background-image: url(../images/layout/header_bg.jpg);
+	background-repeat: no-repeat;
+	height: 455px;
+	width: 770px;
+	float: left;
+}
+#homeWrapper #homeHeader img {
+	float: right;
+	margin-top: 7px;
+	margin-right: 15px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+#homeWrapper #homeNavigation {
+	width: 770px;
+	background-image: url(../images/layout/nav_bg.jpg);
+	background-attachment: scroll;
+	background-repeat: repeat-y;
+	text-align: center;
+	float: left;
+	color: #F9F3D1;
+	background-image: url(../images/layout/nav_bg.jpg);
+}
+#homeWrapper #homeContent {
+	width: 680px;
+	background-image: url(../images/layout/content_bg.jpg);
+	background-repeat: repeat-y;
+	background-attachment: scroll;
+	float: left;
+	padding-left: 45px;
+	padding-right: 45px;
+	background-image: url(../images/layout/content_bg.jpg);
+}
+#homeWrapper #homeFooter {
+	text-align: center;
+	width: 770px;
+	clear: both;
+	color: #F9F3CF;
+}
