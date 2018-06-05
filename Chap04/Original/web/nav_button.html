@@ -6,7 +6,9 @@
 <style>
 body{margin: 0;}
 ul{list-style-type: none;margin: 0;padding: 0;display: flex;justify-content: center;}/*display: flex 負責水平橫放*/
-ul li a{width: 176px;height: 60px;background: #ff0;display: block;background:url(source/layout_button.png);margin: 0 .5em;}/*display: block 負責獨立區塊化*//*margin: 0 .5em; 加間距*/
+ul li a{width: 176px;height: 60px;background: #ff0;display: block;background:url(source/layout_button.png);margin: 0 .5em;
+/*	transition: all 3s;若圖片有其他圖片會看到其他位置閃過*/
+	}/*display: block 負責獨立區塊化*//*margin: 0 .5em; 加間距*/
 /*直接指定圖片位置*/
 ul li:nth-child(1) a{background-position: 0 -72px;}
 ul li:nth-child(2) a{background-position: -200px -72px;}
