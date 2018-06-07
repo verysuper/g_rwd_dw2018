@@ -4,13 +4,19 @@
 <meta charset="utf-8">
 <title>無標題文件</title>
 	<style>
-	.box{width: 200px;height: 200px;background:lightgreen;border-radius: 50%;animation: test 3s;}
+	.box{width: 200px;height: 200px;background:lightgreen;border-radius: 50%;
+		animation: test 3s infinite alternate; 
+		}
 
 
 	@keyframes test{
+			0%{margin: 0;}
+			50%{margin: 50%;}
+			100%{margin-left: 600px;} 
+/*
 	from{margin: 0;}
-
 	to{margin-left: 600px;} 
+*/
 	}
 
 
