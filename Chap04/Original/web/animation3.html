@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+	<style>
+	body { margin: 0; } 
+	div#slider { overflow: hidden; }
+	div#slider figure img { width: 20%; float: left; }
+	div#slider figure { 
+	position: relative;
+	width: 500%;
+	margin: 0;
+	left: 0;
+	text-align: left;
+	font-size: 0;
+	animation: 10s imgslide infinite; 
+	}
+
+	@keyframes imgslide {
+	0% { left: 0%; }
+	20% { left: 0%; }
+	25% { left: -100%; }
+	45% { left: -100%; }
+	50% { left: -200%; }
+	70% { left: -200%; }
+	75% { left: -300%; }
+	95% { left: -300%; }
+	100% { left: -400%; }
+	}
+	</style>
+</head>
+
+<body>
+	<div id="slider">
+	<figure>
+	<img src="http://placeimg.com/2000/800" alt="">
+	<img src="http://placeimg.com/2000/800/any" alt="">
+	<img src="http://placeimg.com/2000/800/people" alt="">
+	<img src="http://placeimg.com/2000/800/animal" alt="">
+	<img src="http://placeimg.com/2000/800/tech" alt="">
+	</figure>
+	</div>
+</body>
+</html>
