@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{margin: 0;background: #a69b7b;}
+
+#wrapper{max-width: 770px;margin: auto;height: 576px;background: url(../images/index/background.png);}
+
+#header,#navigation,#footer{width: 100%;}
+
+#header{height: 500px;display: flex;justify-content: center;align-items: center;}
