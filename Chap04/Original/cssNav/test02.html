@@ -8,11 +8,19 @@ body{
 background: url(http://www.grazie.com.tw/upload_files/banner/0ff4a92060056bfaed70a11c325e7433.jpg) no-repeat center center fixed;
 background-size: cover;
 }	
-.slogan{width: 380px;height: 380px;background:rgba(223, 123, 40,0.8);border-radius: 50%;}
+.slogan{
+width: 380px;height: 380px;background:rgba(223, 123, 40,0.8);border-radius: 50%;
+position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto;/*整個視窗中間*/
+display: flex;justify-content: center;align-items: center;/*水平.垂直置中*/
+	flex-direction: column;/*方向*/
+color: #fff;font-size: 5vw;/*文字響應視窗大小*/	
+white-space: nowrap;
+}
+.slogan p{margin: 0;}/*文字外邊界*/
 </style>
 </head>
 
 <body>
-<div class="slogan">分享美味 分享歡樂<br>盡在古拉爵</div>
+<div class="slogan"><p>分享美味 分享歡樂</p><p>盡在古拉爵</p></div>
 </body>
 </html>
