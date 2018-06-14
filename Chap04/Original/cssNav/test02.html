@@ -4,19 +4,32 @@
 <meta charset="utf-8">
 <title>無標題文件</title>
 <style>
-body{
-background: url(http://www.grazie.com.tw/upload_files/banner/0ff4a92060056bfaed70a11c325e7433.jpg) no-repeat center center fixed;
-background-size: cover;
-}	
-.slogan{
-width: 380px;height: 380px;background:rgba(223, 123, 40,0.8);border-radius: 50%;
-position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto;/*整個視窗中間*/
-display: flex;justify-content: center;align-items: center;/*水平.垂直置中*/
-	flex-direction: column;/*方向*/
-color: #fff;font-size: 5vw;/*文字響應視窗大小*/	
-white-space: nowrap;
-}
-.slogan p{margin: 0;}/*文字外邊界*/
+/*	@import url(http://fonts.googleapis.com/earlyaccess/amstelvaralpha.css);*/
+	@font-face {
+		/*仿宋*/
+
+		font-family: 'cwTeXFangSong';
+		font-style: normal;
+		font-weight: 500;
+		src: url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.eot);
+		src: url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.eot?#iefix) format('embedded-opentype'),
+		url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.woff2) format('woff2'),
+		url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.woff) format('woff'),
+		url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.ttf) format('truetype');
+	}
+	body{		
+		background: url(http://www.grazie.com.tw/upload_files/banner/0ff4a92060056bfaed70a11c325e7433.jpg) no-repeat center center fixed;
+		background-size: cover;
+	}	
+	.slogan{
+	width: 380px;height: 380px;background:rgba(223, 123, 40,0.8);border-radius: 50%;
+	position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto;/*整個視窗中間*/
+	display: flex;justify-content: center;align-items: center;/*水平.垂直置中*/
+		flex-direction: column;/*方向*/
+	color: #fff;font-size: 5vw;/*文字響應視窗大小*/	
+	white-space: nowrap;
+	}
+	.slogan p{margin: 0;font-family: 'cwTeXFangSong',sans-serif;font-weight:500;}/*文字外邊界*/
 </style>
 </head>
 
