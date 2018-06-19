@@ -1,0 +1,379 @@
+@charset "utf-8";
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 100%;
+	background-color: #FFF;
+	background-image: url(../images/body_bg.png);
+	background-repeat: repeat-x;
+}
+#wrapper {
+	background-image: url(../images/wrapper.png);
+	background-repeat: no-repeat;
+	width: 920px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+#header {
+	float: left;
+	width: 920px;
+	height: 180px;
+}
+#header img {
+	margin-top: 60px;
+	margin-left: 50px;
+}
+#header h1 {
+	font-size: 1.1em;
+	font-weight: bold;
+	margin-left: 60px;
+	margin-top: 15px;
+	font-family: Verdana, Geneva, sans-serif;
+	letter-spacing: 0.2em;
+}
+#nav {
+	float: left;
+	width: 920px;
+	display: none;
+}
+
+#sidebar {
+	float: left;
+	width: 220px;
+}
+#menubtn {
+	float: left;
+	height: 130px;
+	width: 220px;
+}
+#menubtn ul {
+	margin: 0px;
+	padding: 0px;
+}
+#menubtn ul li.home {
+	float: left;
+	height: 130px;
+	width: 95px;
+	padding-top: 0px;
+	padding-right: 8px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	list-style-type: none;
+}
+#menubtn ul li.home a {
+	background-image: url(../images/homebtn_out.gif);
+	background-repeat: no-repeat;
+	float: left;
+	height: 130px;
+	width: 95px;
+}
+#menubtn ul li.home a:hover {
+	background-image: url(../images/homebtn_over.gif);
+}
+
+
+#menubtn ul li.photo {
+	float: left;
+	height: 130px;
+	width: 95px;
+	padding-top: 0px;
+	padding-right: 8px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	list-style-type: none;
+}
+#menubtn ul li.photo a {
+	background-image: url(../images/photobtn_out.gif);
+	background-repeat: no-repeat;
+	float: left;
+	height: 130px;
+	width: 95px;
+}
+#menubtn ul li.photo a:hover {
+	background-image: url(../images/photobtn_over.gif);
+}
+#menu {
+	float: left;
+	width: 200px;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+}
+
+#menutop {
+	background-image: url(../images/leftmenu_topbg.gif);
+	background-repeat: no-repeat;
+	float: left;
+	height: 8px;
+	width: 200px;
+}
+#menumin {
+	background-image: url(../images/leftmenu_minbg.gif);
+	background-repeat: repeat-y;
+	float: left;
+	width: 200px;
+}
+.menumyul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+.menumyul li {
+	font-size: 0.9em;
+	background-image: url(../images/menu_icon.gif);
+	background-repeat: no-repeat;
+	background-position: left;
+	padding-left: 18px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 0px;
+	font-weight: bold;
+}
+.menumyul li a:link, a:visited, a:active {
+	color: #706222;
+	text-decoration: none;
+}
+.menumyul li a:hover {
+	text-decoration: underline;
+}
+
+
+
+#menubon {
+	background-image: url(../images/leftmenu_bonbg.gif);
+	background-repeat: no-repeat;
+	float: left;
+	height: 10px;
+	width: 200px;
+}
+
+#content {
+	float: right;
+	width: 650px;
+	margin-top: 60px;
+	margin-right: 10px;
+}
+#content h1 {
+	font-size: 1.4em;
+	font-weight: bold;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #018bb6;
+	margin-bottom: 15px;
+	background-image: url(../images/h1_icon.gif);
+	background-repeat: no-repeat;
+	padding-left: 25px;
+	background-position: left 5px;
+}
+#content p {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1.1em;
+	margin-left: 50px;
+}
+
+
+#footer {
+	clear: both;
+	width: 920px;
+	text-align: center;
+	font-size: 0.7em;
+	color: #003;
+	padding-top: 10px;
+}
+
+#footer p {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+/*@import url("layoutH.css") only screen and (min-device-width : 320px) and (max-device-width : 480px);*/
+
+@media only screen and (max-width : 480px) {
+
+/* Smartphones (portrait and landscape) ----------- */
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 100%;
+	color: #000;
+	background-color: #8FE3EE;
+	margin: 0px;
+}
+#wrapper {
+	width: 100%;
+	display:none;
+}
+#header {
+	width: 100%;
+	padding: 0.5em;
+	
+}
+#header img {
+	margin: 0.5em;
+	height: 40px;
+	width: 160px;
+}
+#header h1 {
+	font-size: 1em;
+}
+#nav {
+	font-size: 1em;
+}
+#nav ul {
+	margin: 0em;
+	padding-top: 0em;
+	padding-right: 0em;
+	padding-bottom: 0em;
+	padding-left: 2em;
+	list-style-type: circle;
+}
+#nav ul li {
+	margin-top: 5px;
+}
+#sidebar {
+	display: none;
+}
+#content {
+	width: 100%;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+#content h1 {
+	font-size: 1.2em;
+}
+#content p {
+	margin: 0.5em;
+}
+#footer {
+	font-size: 0.8em;
+	width: 100%;
+	padding-top: 0.5em;
+}
+#footer p {
+	padding-right: 0.5em;
+	padding-left: 0.5em;
+	margin-top: 0em;
+	margin-right: 0em;
+	margin-bottom: 0.2em;
+	margin-left: 0em;
+}
+}
+@media print{
+	body {
+	font-family: Verdana, Geneva, sans-serif;
+	color: #000;
+	margin: 0mm;
+}
+#wrapper {
+	text-align: center;
+	width: 100%;
+}
+#header {
+	width: 100%;
+}
+#header img {
+	display: none;
+}
+#header h1 {
+	font-size: 16pt;
+}
+#nav {
+	font-size: 12pt;
+}
+#nav ul {
+	margin: 0mm;
+	padding: 0mm;
+	list-style-type: none;
+}
+#nav ul li {
+	display: inline;
+	margin-right: 12pt;
+}
+#sidebar {
+	display: none;
+}
+#content {
+	display: none;
+}
+#footer {
+	font-size: 12pt;
+	width: 100%;
+	padding-top: 5pt;
+}
+#footer p {
+	margin-top: 2mm;
+	margin-bottom: 2mm;
+}
+	}
+@media only screen and (min-width : 321px) {
+
+/* Smartphones (landscape) ----------- */
+
+
+
+}
+
+@media only screen and (max-width : 320px) {
+
+/* Smartphones (portrait) ----------- */
+
+
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+/* iPads (portrait and landscape) ----------- */
+
+
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+/* iPads (landscape) ----------- */
+
+
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+
+/* iPads (portrait) ----------- */
+
+
+
+}
+
+@media only screen and (min-width : 1200px) {
+
+/* Desktops and laptops ----------- */
+
+
+
+}
+
+@media only screen and (min-width : 1700px) {
+
+/* Large screens ----------- */
+
+
+
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5),only screen and (min-device-pixel-ratio : 1.5) {
+
+/* iPhone 4 ----------- */
+
+
+
+}
+
+
+

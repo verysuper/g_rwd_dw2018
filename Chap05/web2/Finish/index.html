@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>桌面PC版頁面~判斷裝置螢幕解析度後導引至行動裝置網站</title>
+<script type="text/javascript">
+<!--
+function mymedia(){ //自訂函數定義裝置解析度取得與判斷
+var myscreen=screen.availWidth; //取得可瀏覽頁面寬度記錄在變數myscreen中
+if(myscreen<481){document.location.href="mobile/index.html";return;} //如果頁面寬度小於481，轉址到手機版頁面
+if(myscreen<769){document.location.href="tablet/index.html";return;} //如果頁面寬度小於769，轉址到平板電腦版頁面
+}
+mymedia();//呼叫執行自訂函數
+//-->
+</script>
+</head>
+
+<body>
+這是<span style="font-size: 60px; font-weight: bold; color: #333;">一般桌面PC版</span>頁面~判斷裝置<span style="font-size: 24px; color: #F00; font-weight: bold; font-family: '微軟正黑體' ,Arial , sans-serif;">螢幕解析度</span>後導引至行動裝置網站
+</body>
+</html>

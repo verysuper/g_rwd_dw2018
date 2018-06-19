@@ -1,0 +1,51 @@
+﻿分享老師自己必會設定的 media 斷點：
+
+iPad - 768px
+iPad以下 - 767px
+iPhone 6 Plus  -  414px (視專案族群)
+iPone 6 - 375px  (視專案族群)
+iPone 5、SE - 320px
+--
+你應該會很好奇，
+為什麼 還會有一個 767px 的斷點，
+因為通常 iPad 直式 是 Android、IOS 平版很常見的大小，
+再接著 767px~320px 我便會視為他們都是手機 size，
+所以在 767 px 以下時就會直接把他變成手機版型，
+畢竟 767px~6xx size 相當少見，一開始各位可以先確保一些熱門斷點上優化即可，
+至少可以滿足 80% 以上的客戶，不用太吹毛求疵，當然你力求優化的話也是 ok 的。
+
+再來 320px 是你最小需要注意的 SIZE，
+現在仍然有許多手機是 320px，尤其是小 size 的 iPhone，
+以前甚至有 240px 的手機，但現在已經相當稀有了。
+所以如果是 PC 做到手機的話，語法就會有點像是這樣：
+.wrap{
+  max-width: 960px;
+}
+.header {
+  height: 80px;
+}
+.list li{
+  width: 33%;
+}
+.list h3{
+  font-size: 24px;
+}
+@media(max-width: 768px){
+  .header{
+    height: auto;
+  }
+  .list li{
+    width: 48%;
+    margin: 0 1%;
+  }
+}
+@media(max-width: 767px){
+  .list li{
+    width: 98%;
+  }
+}
+@media(max-width: 414px){
+  .list li{
+    font-size: 18px;
+  }
+}

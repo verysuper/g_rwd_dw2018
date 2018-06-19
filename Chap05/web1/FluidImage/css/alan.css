@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/* clearfix 清除浮動 */
+.cf { zoom: 1; }
+.cf:before, .cf:after { content: ""; display: table; }
+.cf:after { clear: both; }
+
+/* 流動圖片Flexible Image */
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+/* 主框架 */
+#stage {
+  margin: 0;
+}
+
+/* 頁首區 */
+header {
+  text-align: center;
+  color:#fff;
+  background-color: #290033;
+}
+header h1 {
+  font-size: 2.3em;
+  padding: 0.4em 0 0.4em 0;
+  margin: 0 0 0.2em;  /* 上:0、左右:0、下0.2em的空白 */
+}
+footer {
+  width: 100%;
+  text-align: center;
+}
+
+/* 流動圖片Flexible Image */
+img {
+  max-width: 100%; 
+  height:auto;
+}
+

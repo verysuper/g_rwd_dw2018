@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>桌面PC版頁面~檢測 User-Agent 後導引至行動裝置網站</title>
+<script type="text/javascript"> 
+<!--
+    var mobiles = new Array 
+            ( 
+                "midp", "j2me", "avant", "docomo", "novarra", "palmos", "palmsource", 
+                "240x320", "opwv", "chtml", "pda", "windows ce", "mmp/", 
+                "blackberry", "mib/", "symbian", "wireless", "nokia", "hand", "mobi", 
+                "phone", "cdm", "up.b", "audio", "sie-", "sec-", "samsung", "htc", 
+                "mot-", "mitsu", "sagem", "sony", "alcatel", "lg", "eric", "vx", 
+                "NEC", "philips", "mmm", "xx", "panasonic", "sharp", "wap", "sch", 
+                "rover", "pocket", "benq", "java", "pt", "pg", "vox", "amoi", 
+                "bird", "compal", "kg", "voda", "sany", "kdd", "dbt", "sendo", 
+                "sgh", "gradi", "jb", "dddi", "moto", "iphone", "android", 
+                "iPod", "incognito", "webmate", "dream", "cupcake", "webos", 
+                "s8000", "bada", "googlebot-mobile" 
+            ) 
+    var user_ua = navigator.userAgent.toLowerCase(); 
+    var Mobile_ua = false; 
+    for (var i = 0; i < mobiles.length; i++) { 
+        if (user_ua.indexOf(mobiles[i]) > 0) { 
+            Mobile_ua = true; 
+            break; 
+        } 
+    } 
+	if(Mobile_ua==true){
+		  location.href = "mobile/index.html"; //前往手機版網站
+		}
+//-->
+</script>
+</head>
+
+<body>
+這是<span style="font-size: 60px; font-weight: bold; color: #333;">一般桌面PC版</span>頁面~檢測  <span style="font-size: 24px; color: #F00; font-weight: bold; font-family: '微軟正黑體' ,Arial , sans-serif;">User-Agent</span> 後導引至行動裝置網站
+</body>
+</html>
