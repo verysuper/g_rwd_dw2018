@@ -14,13 +14,13 @@
 	.header .logo a{background: url(../images/M2.png) no-repeat;width: 150px;height: 150px;}
 	}
 
-.menu{float: right;margin: 30px 0 0 0;}/*整個nenu位置*/
+.menu{float: right;}/*整個nenu位置*/
 .menu li{float: left;background: #39f;border-right: 1px solid #fff;}/*menu內樣式*/
 .menu li:last-child{border-right: 0;}
 .menu li a{width: 100px;height: 30px;display: block;color: #fff;text-align: center;line-height: 30px;text-decoration: none;font-weight: bold;}/*行內樣式*/
 .menu li a:hover{background: #30f;}/*li效果*/
 	@media(max-width: 768px) {
-	.menu{float: none;}/*float: none;取消li對齊*/
+	.menu{float: none; margin: 30px 0 0 0;}/*float: none;取消li對齊*/
 	.menu li{float: none;width: 90%;margin: 10px auto;border-radius: 3px;}
 	.menu li a{width: 100%;padding: 5px 0;}
 	}
@@ -35,5 +35,12 @@
 
 .sidebar{float: right;width: 20%;border: 2px solid;margin-left:3%;padding: 5px;}/*float: right; 讓2塊區域並排*/
 .sidebar img{max-width: 100%;height: auto;}/*height: auto; 用在效果*/
+
+	@media(max-width: 768px){	
+	.content,.sidebar{float: none;width: 95%;border: 0;margin: 0;}
+	.sidebar{text-align: center;}
+	.sidebar img{width: 42%;height: auto;display: inline-block;border: 2px solid;padding: 2%;}/*圖片22並排*/
+	.sidebar img:hover{background: #33f;}
+	}
 
 .footer{clear: both;padding: 1em 0;text-align: center;}
