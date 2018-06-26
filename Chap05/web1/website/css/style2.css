@@ -6,3 +6,9 @@
 .header{height: 350px;position: relative;} /*相對定位，響應視窗*/
 .header .logo{position: absolute;top: 30px;left: 0;}/*絕對定位，固定logo位置*/
 .header .logo a{background: url(../images/M1.png);width: 250px;height: 250px;display: block;text-indent: -9999px;}
+
+.menu{float: right;margin: 30px 0 0 0;}/*整個nenu位置*/
+.menu li{float: left;background: #39f;border-right: 1px solid #fff;}/*menu內樣式*/
+.menu li:last-child{border-right: 0;}
+.menu li a{width: 100px;height: 30px;display: block;color: #fff;text-align: center;line-height: 30px;text-decoration: none;font-weight: bold;}/*行內樣式*/
+.menu li a:hover{background: #30f;}/*li效果*/
