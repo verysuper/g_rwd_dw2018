@@ -20,7 +20,7 @@
 .menu li a{width: 100px;height: 30px;display: block;color: #fff;text-align: center;line-height: 30px;text-decoration: none;font-weight: bold;}/*行內樣式*/
 .menu li a:hover{background: #30f;}/*li效果*/
 	@media(max-width: 768px) {
-	.menu{float: none;}
+	.menu{float: none;}/*float: none;取消li對齊*/
 	.menu li{float: none;width: 90%;margin: 10px auto;border-radius: 3px;}
 	.menu li a{width: 100%;padding: 5px 0;}
 	}
