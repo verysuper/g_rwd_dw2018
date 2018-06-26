@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>我是桌面版</title>
+	<style>
+		h1{font-size: 10vw;}
+	</style>
+	<script>
+//自訂函數定義裝置解析度取得與判斷
+function mymedia(){ 
+	var myscreen=screen.availWidth; //取得可瀏覽頁面寬度記錄在變數myscreen中
+	//如果頁面寬度小於481，轉址到手機版頁面並停止後續程式 
+	if(myscreen<413){document.location.href="mobile.html";return;}
+	//如果頁面寬度小於769，轉址到平板電腦版頁面並停止後續程式 
+	if(myscreen<735){document.location.href="tablet.html";return;} 
+}
+
+mymedia();	//呼叫執行自訂函數 
+
+</script> 
+</head>
+
+<body>
+	<h1>我是桌面版</h1>
+</body>
+</html>
