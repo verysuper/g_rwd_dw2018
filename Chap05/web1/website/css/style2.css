@@ -16,3 +16,12 @@
 .content{width: 75%;border: 2px solid;padding: 20px;text-align:justify;}/*text-align:justify行左右對齊*/
 .content h2{font-weight: bold;font-size: 1.5em;margin: 30px 0 20px 0;}
 .content p{line-height: 2;letter-spacing: .1em;} /*letter-spacing字距*/
+
+.content{width: 70%;border: 2px solid;padding: 20px;text-align:justify;float: left;}/*float: left; 讓2塊區域並排*/
+.content h2{font-weight: bold;font-size: 1.5em;margin: 30px 0 20px 0;}
+.content p{line-height: 2;letter-spacing: .1em;}
+
+.sidebar{float: right;width: 20%;border: 2px solid;margin-left:3%;padding: 5px;}/*float: right; 讓2塊區域並排*/
+.sidebar img{max-width: 100%;height: auto;}/*height: auto; 用在效果*/
+
+.footer{clear: both;}
