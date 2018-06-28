@@ -7,28 +7,15 @@
 <meta name="Description" content="想想走透透是生活在地球上的某個人所遭遇到的追求享樂與平衡的故事點滴。" />
 <meta name="author" content="學習電腦的ALAN" />
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<link rel="stylesheet" href="css/layout.css">
-<!--<link rel="stylesheet" href="css/mobile.css">-->
+<!--<link rel="stylesheet" href="css/layout.css">-->
+<link rel="stylesheet" href="css/mobile.css">
 <link rel="stylesheet" href="css/print.css" media="print">
-	<script>
-	//自訂函數定義裝置解析度取得與判斷
-	function mymedia(){ 
-		var myscreen=screen.availWidth; //取得可瀏覽頁面寬度記錄在變數myscreen中
-		//如果頁面寬度小於481，轉址到手機版頁面並停止後續程式 
-		if(myscreen<481){document.location.href="mobile.html";return;}
-		//如果頁面寬度小於769，轉址到平板電腦版頁面並停止後續程式 
-		if(myscreen<769){document.location.href="mobile.html";return;} 
-	}
-
-	mymedia();	//呼叫執行自訂函數 
-
-	</script> 
 </head>
 
 <body>
 <!--layout wrapper-->
 <div id="wrapper">
-<!--<button onClick="print()"><img src="https://png.icons8.com/print/0000ff" alt=""></button>-->
+<button onClick="print()"><img src="https://png.icons8.com/print/0000ff" alt=""></button>
   <!--header-->
   <div id="header">  
   <img src="images/logo.gif" width="187" height="45" alt="想飛Sky_logo" />
