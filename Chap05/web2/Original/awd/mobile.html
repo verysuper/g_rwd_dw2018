@@ -6,25 +6,30 @@
 	<style>
 		h1{font-size: 5vw;}
 	</style>
-	<script>
-		//設定Mobile的定義(全小寫)
+<script>
+//設定Mobile的定義(全小寫)
 
-		var mobileAgent = new Array("iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", "webmate", "bada", "nokia", "lg", "ucweb", "skyfire");
+var mobileAgent = new Array("iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", "webmate", "bada", "nokia", "lg", "ucweb", "skyfire");
 
-		//讀取用戶的瀏覽器資料
-		var browser = navigator.userAgent.toLowerCase();
+//讀取用戶的瀏覽器資料
+var browser = navigator.userAgent.toLowerCase();
 
-		//檢查開始
-		for (var i=0; i<mobileAgent.length; i++){
-			if (browser.indexOf(mobileAgent[i])!=-1){
-				alert('您好！您使用的系統是：'+mobileAgent[i]);
-				//程式碼(轉址)
-				location.href = 'androidmobile.html';
-				//停止運行迴圈
-				break;
-			}
-		}
-	</script>
+//檢查開始
+for (var i=0; i<mobileAgent.length; i++){
+if (browser.indexOf(mobileAgent[i])!=-1){
+alert('您好！您使用的系統是：'+mobileAgent[i]);
+//程式碼(轉址)
+
+if(mobileAgent[i]=="android"){
+location.href = 'androidmobile.html';
+}else if(mobileAgent[i]=="iphone"){
+location.href = 'iphonemobile.html';
+}
+//停止運行迴圈
+break;
+}
+}
+</script>
 </head>
 
 <body>
