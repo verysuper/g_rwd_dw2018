@@ -1,0 +1,4712 @@
+﻿R.W.D.響應式跨平台網頁設計
+
+2018/06/28--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+http://qr.calm9.com/tw/
+
+
+
+<link rel="stylesheet" href="css/print.css" media="print">
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<script>
+//設定Mobile的定義(全小寫)
+
+var mobileAgent = new Array("iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", "webmate", "bada", "nokia", "lg", "ucweb", "skyfire");
+
+//讀取用戶的瀏覽器資料
+var browser = navigator.userAgent.toLowerCase();
+
+//檢查開始
+for (var i=0; i<mobileAgent.length; i++){
+if (browser.indexOf(mobileAgent[i])!=-1){
+alert('您好！您使用的系統是：'+mobileAgent[i]);
+//程式碼(轉址)
+
+if(mobileAgent[i]=="android"){
+location.href = 'androidmobile.html';
+}else if(mobileAgent[i]=="iphone"){
+location.href = 'iphonemobile.html';
+}
+//停止運行迴圈
+break;
+}
+}
+</script>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<script>
+var str="Hello world!"
+document.write(str.indexOf("Hello") + "<br>");
+document.write(str.indexOf("World") + "<br>");
+</script>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<style>
+body{font-size: 300%;}	
+</style>
+</head>
+
+<body>
+<script>
+var ua=navigator.userAgent;
+document.write(ua);
+</script>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<script>
+//自訂函數定義裝置解析度取得與判斷
+function mymedia(){ 
+var myscreen=screen.availWidth; //取得可瀏覽頁面寬度記錄在變數myscreen中
+//如果頁面寬度小於481，轉址到手機版頁面並停止後續程式 
+if(myscreen<413){document.location.href="mobile.html";return;}
+//如果頁面寬度小於769，轉址到平板電腦版頁面並停止後續程式 
+if(myscreen<847){document.location.href="tablet.html";return;} 
+}
+
+mymedia();	//呼叫執行自訂函數 
+
+</script> 
+
+2018/06/28--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+2018/06/26--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<style>
+body,html{height: 100%;}
+body{font-size: 3em;display: flex;flex-direction: column;align-items: center;justify-content: center;}	
+</style>
+</head>
+
+<body>
+<script>
+var myscreenW=screen.width;
+var myscreenAW=screen.availWidth;	
+//	alert(myscreenW);
+document.write("寬度："+myscreenW+"<br>");
+document.write("可見寬度："+myscreenAW+"<br>");
+
+document.write("<br>");
+
+var myscreenH=screen.height;
+var myscreenAH=screen.availHeight;
+document.write("高度："+myscreenH+"<br>");
+document.write("可見高度："+myscreenAH+"<br>");	
+</script>
+</body>
+</html>
+
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.wrap{max-width: 960px;margin: 0 auto;}
+
+.header{height: 350px;position: relative;}
+@media screen and (max-width: 768px) {
+.header{height: auto;}
+}
+.header .logo{position: absolute;top: 30px;left: 0;}
+.header .logo a{background: url(../images/M1.png);width: 250px;height: 250px;display: block;text-indent: -9999px;}
+@media screen and (max-width: 768px) {
+.header .logo{position: relative;margin: auto;width: 150px;}	
+.header .logo a{background: url(../images/M2.png) no-repeat;width: 150px;height: 170px;}
+}
+
+.menu{float: right;margin: 30px 0 0 0;}
+.menu li{float: left;background: #39f;border-right: 1px solid #fff;}
+.menu li:last-child{border-right: 0;}
+.menu li a{width: 100px;height: 30px;display: block;color: #fff;text-align: center;line-height: 30px;text-decoration: none;font-weight: bold;}
+.menu li a:hover{background: #30f;}
+@media(max-width: 768px) {
+.menu{float: none;}
+.menu li{float: none;width: 90%;margin: 10px auto;border-radius: 3px;}
+.menu li a{width: 100%;padding: 5px 0;}
+}
+
+.content{width: 70%;border: 2px solid;padding: 20px;text-align:justify;float: left;}
+.content h2{font-weight: bold;font-size: 1.5em;margin: 30px 0 20px 0;}
+.content p{line-height: 2;letter-spacing: .1em;}
+
+.sidebar{float: right;width: 20%;border: 2px solid;margin-left:3%;padding: 5px;}
+.sidebar img{max-width: 100%;height: auto;}
+@media(max-width: 768px){	
+.content,.sidebar{float: none;width: 95%;border: 0;margin: 0;}
+.sidebar{text-align: center;}
+.sidebar img{width: 42%;height: auto;display: inline-block;border: 2px solid;padding: 2%;}
+.sidebar img:hover{background: #33f;}
+}
+
+.footer{clear: both;padding: 1em 0;text-align: center;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+@media(max-width: 768px){	
+.content,.sidebar{float: none;width: 95%;border: 0;margin: 0;}
+.sidebar{text-align: center;}
+.sidebar img{width: 42%;height: auto;display: inline-block;border: 2px solid;padding: 2%;}
+.sidebar img:hover{background: #33f;}
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+@media(max-width: 768px) {
+.menu{float: none;}
+.menu li{float: none;width: 90%;margin: 10px auto;border-radius: 3px;}
+.menu li a{width: 100%;padding: 5px 0;}
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+@media screen and (max-width: 768px) {
+.header{height: auto;}
+}
+
+@media screen and (max-width: 768px) {
+.header .logo{position: relative;margin: auto;width: 150px;}	
+.header .logo a{background: url(../images/M2.png) no-repeat;width: 150px;height: 170px;}
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+.wrap{max-width: 960px;margin: 0 auto;}
+
+.header{height: 350px;position: relative;}
+.header .logo{position: absolute;top: 30px;left: 0;}
+.header .logo a{background: url(../images/M1.png);width: 250px;height: 250px;display: block;text-indent: -9999px;}
+
+.menu{float: right;margin: 30px 0 0 0;}
+.menu li{float: left;background: #39f;border-right: 1px solid #fff;}
+.menu li:last-child{border-right: 0;}
+.menu li a{width: 100px;height: 30px;display: block;color: #fff;text-align: center;line-height: 30px;text-decoration: none;font-weight: bold;}
+.menu li a:hover{background: #30f;}
+
+.content{width: 70%;border: 2px solid;padding: 20px;text-align:justify;float: left;}
+.content h2{font-weight: bold;font-size: 1.5em;margin: 30px 0 20px 0;}
+.content p{line-height: 2;letter-spacing: .1em;}
+
+.sidebar{float: right;width: 20%;border: 2px solid;margin-left:3%;padding: 5px;}
+.sidebar img{max-width: 100%;height: auto;}
+
+.footer{clear: both;padding: 1em 0;text-align: center;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.content{width: 70%;border: 2px solid;padding: 20px;text-align:justify;float: left;}
+.content h2{font-weight: bold;font-size: 1.5em;margin: 30px 0 20px 0;}
+.content p{line-height: 2;letter-spacing: .1em;}
+
+.sidebar{float: right;width: 20%;border: 2px solid;margin-left:3%;padding: 5px;}
+.sidebar img{max-width: 100%;height: auto;}
+
+.footer{clear: both;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.content{width: 75%;border: 2px solid;padding: 20px;text-align:justify;}
+.content h2{font-weight: bold;font-size: 1.5em;margin: 30px 0 20px 0;}
+.content p{line-height: 2;letter-spacing: .1em;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.menu{float: right;margin: 30px 0 0 0;}
+.menu li{float: left;background: #39f;border-right: 1px solid #fff;}
+.menu li:last-child{border-right: 0;}
+.menu li a{width: 100px;height: 30px;display: block;color: #fff;text-align: center;line-height: 30px;text-decoration: none;font-weight: bold;}
+.menu li a:hover{background: #30f;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.header{height: 350px;position: relative;}
+.header .logo{position: absolute;top: 30px;left: 0;}
+.header .logo a{background: url(../images/M1.png);width: 250px;height: 250px;display: block;text-indent: -9999px;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+body{}
+
+.wrap{max-width: 960px;margin: 0 auto;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<link rel="stylesheet" href="css/style2.css">
+<!--
+<style>
+@import url(css/style2.css);	
+</style>
+-->
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<div class="wrap">
+<div class="header">
+<h1 class="logo"><a href="#">公司LOGO</a></h1>
+<ul class="menu">
+<li><a href="#">公司簡介</a></li>
+<li><a href="#">專業服務</a></li>
+<li><a href="#">新聞與活動</a></li>
+<li><a href="#">活動花絮</a></li>
+<li><a href="#">聯繫我們</a></li>
+</ul>
+</div> 
+<div class="content">
+<h2>新聞標題</h2>
+<p>
+產業新聞 (2099-06-21 09:06) 
+</p>
+<p>
+當有足夠的人，都希望某一件事、都想要某一個商品，那麼你就有機會去做那個市場。而在撰寫產品描述之前，你必須找到人們真心「想要」或是「渴望」的那件事，以利你去撰寫產品的描述。
+</p>
+<p>
+如果你是在販售減肥的食品的業者，那麼你就需要在產品描述裡面，撰寫出讓想要減肥的人們感受得到，你的商品可以滿足這兩件重要的事情。像是GNC（一種蛋白質奶昔商品）在產品描述中提到，它可以「維持你減重的目標」（maintain your weight loss goals）、「幫助維持正常、更健康的卡路里水準」（help support normal, healthy cholesterol levels）、「健康的新陳代謝」（healthy metabolism），而正對減肥苦惱的消費者很有可能會被這些說詞打動。
+</p>
+</div>
+<div class="sidebar">
+<img src="images/1.jpg" alt="">
+<img src="images/1.jpg" alt="">
+<img src="images/1.jpg" alt="">
+</div>
+<div class="footer">
+Copyright© 2099 
+</div>
+</div>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+http://cpanel.byethost.com
+
+2018/06/26--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+2018/06/21--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+/*	body,html{height: 100%;}*/
+.wrapper{width: 80vw;height: 30vh;margin: auto;background: #ccc;text-align: center;overflow: hidden;
+background: url(https://picsum.photos/2000/800) center center fixed;
+background-size: cover;
+}	
+/*	.wrapper img{width: 50%;height: 100%;}	*/
+</style>
+</head>
+
+<body>
+<div class="wrapper"></div>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<div class="wrapper"></div>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<div class="wrapper"></div>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>	
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<p>hello</p>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+/*	body,html{height: 100%;}*/
+.wrapper{width: 80vw;height: 100vh;margin: auto;background: #ccc;text-align: center;overflow: hidden;}	
+.wrapper img{max-width: 100%;height: 100%;}
+</style>
+</head>
+
+<body>
+<div class="wrapper"><img src="https://picsum.photos/800/600" alt=""></div>
+<div class="wrapper"><img src="https://picsum.photos/800/600" alt=""></div>
+<div class="wrapper"><img src="https://picsum.photos/800/600" alt=""></div>
+</body>
+</html>
+
+-------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://picsum.photos/
+
+-------我是分隔線--------我是分隔線--------我是分隔線--------
+
+@media screen and (max-width: 768px) {
+.menu{
+float: none;
+width: 100%;
+}
+}
+
+@media screen and (max-width: 768px) {
+.content{
+margin-left: 0;
+}
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+http://gs.statcounter.com/
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://developer.apple.com/design/human-interface-guidelines/ios/overview/iphone-x/
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+body{font-family:"微軟正黑體",Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";}
+
+.wrap{max-width: 960px;margin: auto;line-height: 1.5;}
+
+.news{}
+
+.news h2{font-size: 1.5em;font-family: "標楷體";}
+
+.news li{width: 31.33333%;float: left;margin: 0 1% 1em 1%;}
+
+@media screen and (max-width: 768px) {
+.news li{width: 48%;}
+}
+
+@media screen and (max-width: 569px) {
+.news li{width: 98%;}
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+body{font-family:"微軟正黑體",Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";}
+
+.wrap{max-width: 960px;margin: auto;line-height: 1.5;}
+
+.news{}
+
+.news h2{font-size: 1.5em;font-family: "標楷體";}
+
+.news li{width: 31.33333%;float: left;margin: 0 1% 1em 1%;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>首頁</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
+<style>
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+<ul class="news">
+<li>
+<h2>我是標題</h2>
+<p class="news_content">你可能會覺得這是一件很小的事情，但若要賣一個商品、經營一個賣場，並且希望它能夠為你帶來銷售，這些都是你應該在開店之前要思考的事。絕對不要天馬行空地想說：「反正有產品做出來，就一定會有市場的！」絕－對－不要那麼天真！好吧！如果你真的那麼天真地將產品做出來以後，準備要讓它開賣了，那麼至少在開賣以前想想上述的幾個問題。最重要的是：想想人們為什麼需要？有哪些人會需要。當然我們都會希望產品描述可以帶來銷售，但是要怎麼「賣」你的商品呢？</p>
+</li>
+<li>
+<h2>我是標題</h2>
+<p class="news_content">你可能會覺得這是一件很小的事情，但若要賣一個商品、經營一個賣場，並且希望它能夠為你帶來銷售，這些都是你應該在開店之前要思考的事。絕對不要天馬行空地想說：「反正有產品做出來，就一定會有市場的！」絕－對－不要那麼天真！好吧！如果你真的那麼天真地將產品做出來以後，準備要讓它開賣了，那麼至少在開賣以前想想上述的幾個問題。最重要的是：想想人們為什麼需要？有哪些人會需要。當然我們都會希望產品描述可以帶來銷售，但是要怎麼「賣」你的商品呢？</p>
+</li>
+<li>
+<h2>我是標題</h2>
+<p class="news_content">你可能會覺得這是一件很小的事情，但若要賣一個商品、經營一個賣場，並且希望它能夠為你帶來銷售，這些都是你應該在開店之前要思考的事。絕對不要天馬行空地想說：「反正有產品做出來，就一定會有市場的！」絕－對－不要那麼天真！好吧！如果你真的那麼天真地將產品做出來以後，準備要讓它開賣了，那麼至少在開賣以前想想上述的幾個問題。最重要的是：想想人們為什麼需要？有哪些人會需要。當然我們都會希望產品描述可以帶來銷售，但是要怎麼「賣」你的商品呢？</p>
+</li>
+<li>
+<h2>我是標題</h2>
+<p class="news_content">你可能會覺得這是一件很小的事情，但若要賣一個商品、經營一個賣場，並且希望它能夠為你帶來銷售，這些都是你應該在開店之前要思考的事。絕對不要天馬行空地想說：「反正有產品做出來，就一定會有市場的！」絕－對－不要那麼天真！好吧！如果你真的那麼天真地將產品做出來以後，準備要讓它開賣了，那麼至少在開賣以前想想上述的幾個問題。最重要的是：想想人們為什麼需要？有哪些人會需要。當然我們都會希望產品描述可以帶來銷售，但是要怎麼「賣」你的商品呢？</p>
+</li>
+<li>
+<h2>我是標題</h2>
+<p class="news_content">你可能會覺得這是一件很小的事情，但若要賣一個商品、經營一個賣場，並且希望它能夠為你帶來銷售，這些都是你應該在開店之前要思考的事。絕對不要天馬行空地想說：「反正有產品做出來，就一定會有市場的！」絕－對－不要那麼天真！好吧！如果你真的那麼天真地將產品做出來以後，準備要讓它開賣了，那麼至少在開賣以前想想上述的幾個問題。最重要的是：想想人們為什麼需要？有哪些人會需要。當然我們都會希望產品描述可以帶來銷售，但是要怎麼「賣」你的商品呢？</p>
+</li>
+<li>
+<h2>我是標題</h2>
+<p class="news_content">你可能會覺得這是一件很小的事情，但若要賣一個商品、經營一個賣場，並且希望它能夠為你帶來銷售，這些都是你應該在開店之前要思考的事。絕對不要天馬行空地想說：「反正有產品做出來，就一定會有市場的！」絕－對－不要那麼天真！好吧！如果你真的那麼天真地將產品做出來以後，準備要讓它開賣了，那麼至少在開賣以前想想上述的幾個問題。最重要的是：想想人們為什麼需要？有哪些人會需要。當然我們都會希望產品描述可以帶來銷售，但是要怎麼「賣」你的商品呢？</p>
+</li> 
+</ul>
+</div>	
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.wrapper{max-width: 800px;height: 50vh; margin: 0 auto; border: 1px solid;display: flex;flex-direction: column-reverse;align-items: center;justify-content: center;}
+h1{font-size: 3em;margin: 0;}	
+.nav{width: 30%;background: lightpink;}
+.content{width: 70%;background: lightblue;}
+
+2018/06/21--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+2018/06/19--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>首頁</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
+<style>
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+</head>
+
+<body>
+
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+<!--
+reset
+html5shiv.js
+repond.js
+-->
+
+
+<title>首頁</title>
+
+<style>
+header{width: 500px;height: 300px;background: #ff0;}
+</style>
+</head>
+
+<body>
+<header>header</header>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://www.minuteinbox.com/
+
+https://byet.host/
+https://www.000webhost.com
+
+2018/06/19--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+2018/06/14--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+/*@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);*/
+@font-face {
+
+/*仿宋*/
+
+font-family: 'cwTeXFangSong';
+font-style: normal;
+font-weight: 500;
+src: url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.eot);
+src: url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.eot?#iefix) format('embedded-opentype'),
+url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.woff2) format('woff2'),
+url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.woff) format('woff'),
+url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.ttf) format('truetype');
+}
+body{
+background: url(http://www.grazie.com.tw/upload_files/banner/0ff4a92060056bfaed70a11c325e7433.jpg) no-repeat center center fixed;
+background-size: cover;
+}	
+.slogan{
+width: 380px;height: 380px;background:rgba(223, 123, 40,0.8);border-radius: 50%;
+position: fixed; top: 0; right: 0; bottom: 0; left: 0; margin: auto;
+display: flex;justify-content: center;align-items: center;flex-direction: column;
+color: #fff;font-size: 6vw;	
+white-space: nowrap;
+}
+.slogan p{margin: 0;font-family: 'cwTeXFangSong',sans-serif;font-weight:500;}
+
+#banner{position: fixed; top: ; right: 0; bottom: 0; left: ;}
+
+#menu{width: 80px;height: 80px;background: #000;color: #fff;display: flex;justify-content: center;align-items: center;font-size: 3em;
+position: fixed; top: 50px; right: ; bottom: ; left: 50px; 
+}
+</style>
+</head>
+
+<body>
+<div id="menu">&equiv;</div>
+
+<div class="slogan"><p>分享美味 分享歡樂</p><p>盡在古拉爵</p></div>
+
+<img src="http://www.grazie.com.tw/assets/images/img-career.png" alt="" id="banner">	
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+@font-face {
+
+/*仿宋*/
+
+font-family: 'cwTeXFangSong';
+font-style: normal;
+font-weight: 500;
+src: url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.eot);
+src: url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.eot?#iefix) format('embedded-opentype'),
+url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.woff2) format('woff2'),
+url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.woff) format('woff'),
+url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.ttf) format('truetype');
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+/*@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);*/
+@font-face {
+
+/*仿宋*/
+
+font-family: 'cwTeXFangSong';
+font-style: normal;
+font-weight: 500;
+src: url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.eot);
+src: url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.eot?#iefix) format('embedded-opentype'),
+url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.woff2) format('woff2'),
+url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.woff) format('woff'),
+url(http://fonts.gstatic.com/ea/cwtexfangsong/v3/cwTeXFangSong-zhonly.ttf) format('truetype');
+}
+body{
+background: url(http://www.grazie.com.tw/upload_files/banner/0ff4a92060056bfaed70a11c325e7433.jpg) no-repeat center center fixed;
+background-size: cover;
+}	
+.slogan{
+width: 380px;height: 380px;background:rgba(223, 123, 40,0.8);border-radius: 50%;
+position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto;
+display: flex;justify-content: center;align-items: center;flex-direction: column;
+color: #fff;font-size: 6vw;	
+white-space: nowrap;
+}
+.slogan p{margin: 0;font-family: 'cwTeXFangSong',sans-serif;font-weight:500;}
+</style>
+</head>
+
+<body>
+<div class="slogan"><p>分享美味 分享歡樂</p><p>盡在古拉爵</p></div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+body{
+background: url(http://www.grazie.com.tw/upload_files/banner/0ff4a92060056bfaed70a11c325e7433.jpg) no-repeat center center fixed;
+background-size: cover;
+}	
+.slogan{
+width: 380px;height: 380px;background:rgba(223, 123, 40,0.8);border-radius: 50%;
+position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto;
+display: flex;justify-content: center;align-items: center;flex-direction: column;
+color: #fff;font-size: 5vw;	
+white-space: nowrap;
+}
+.slogan p{margin: 0;}
+</style>
+</head>
+
+<body>
+<div class="slogan"><p>分享美味 分享歡樂</p><p>盡在古拉爵</p></div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<style>
+body{
+background: url(http://www.grazie.com.tw/upload_files/banner/0ff4a92060056bfaed70a11c325e7433.jpg) no-repeat center center fixed;
+background-size: cover;
+}	
+.slogan{
+width: 380px;height: 380px;background:rgba(223, 123, 40,0.8);border-radius: 50%;
+position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto;
+display: flex;justify-content: center;align-items: center;flex-direction: column;
+color: #fff;font-size: 5vw;	
+white-space: nowrap;
+}
+.slogan p{margin: 0;}
+</style>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+body{
+background: url(http://www.grazie.com.tw/upload_files/banner/0ff4a92060056bfaed70a11c325e7433.jpg) no-repeat center center fixed;
+background-size: cover;
+}	
+.slogan{width: 380px;height: 380px;background:rgba(223, 123, 40,0.8);border-radius: 50%;}
+</style>
+</head>
+
+<body>
+<div class="slogan">分享美味 分享歡樂<br>盡在古拉爵</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<style>
+body{background: url(http://www.grazie.com.tw/upload_files/banner/0ff4a92060056bfaed70a11c325e7433.jpg) no-repeat center center fixed;
+background-size: cover;}	
+</style>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<style type="text/css">
+ul{
+background-image:url(a.jpg);
+width:260px;
+height:160px;
+list-style-type: none;padding: 0;
+}
+li{
+/*	list-style-image:url(b.gif);*/
+text-align: right;
+background: url(b.gif) no-repeat right center;
+padding-right: 24px;
+line-height:25px;
+color:#FFF;
+font-size:12px;
+font-weight:bold;
+}
+</style>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<a href="#" title="Happy&#013;New&#010;Year">link</a>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+<i class="fab fa-accessible-icon fa-2x"></i>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://fontawesome.com/
+https://www.iconfinder.com
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.nav li a:first-letter{font-size: 2em;color: #f00;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.nav li:nth-child(1) a:before{content: "\02764";}
+.nav li:nth-child(2) a:before{content: "\02192";}
+.nav li:nth-child(3) a:before{content: "\2261";}
+.nav li:nth-child(4) a:before{content: "\2600";}
+.nav li:nth-child(5) a:before{content: "\2605";}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+http://www.mausr.com/
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.nav li a:before{content: "\02764";}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://www.google.com.tw/search?q=arrowshtml&oq=arrowshtml&aqs=chrome..69i57.7711j0j7&sourceid=chrome&ie=UTF-8
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+ul.nav{list-style-type: none;margin: 0;padding: 0;}	
+.nav li a{width: 150px;height: 50px;background: lightblue;display: block;text-align: center;line-height: 50px;text-decoration: none;border-bottom: 2px dashed;}
+.nav li:nth-child(1) a{border-top: 2px dashed;}
+.nav li a:hover{background: navy;color: lightblue;}
+</style>
+</head>
+
+<body>
+<ul class="nav">
+<li><a href="#">關於我們</a></li>
+<li><a href="#">最新消息</a></li>
+<li><a href="#">產品專區</a></li>
+<li><a href="#">服務專區</a></li>
+<li><a href="#">聯絡我們</a></li>
+</ul>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<ul>
+<li><a href="#">關於我們</a></li>
+<li><a href="#">最新消息</a></li>
+<li><a href="#">產品專區</a></li>
+<li><a href="#">服務專區</a></li>
+<li><a href="#">聯絡我們</a></li>
+</ul>
+
+2018/06/14--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+2018/06/12--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+body{margin: 0;background: #a69b7b;}
+
+#wrapper{max-width: 770px;margin: auto;height: 576px;background: url(../images/index/background.png);}
+
+#header,#navigation,#footer{width: 100%;}
+
+#header{height: 500px;display: flex;justify-content: center;align-items: center;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+var p,i,x; if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('images/nav/property_over.gif','images/nav/rooms_over.gif','images/index/logo_1.png','images/index/logo_2.png')">
+<div id="wrapper">
+<div id="header">
+<img src="images/index/logo.png" alt="" id="logo">
+</div>
+<div id="navigation">
+<a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('logo','','images/index/logo_1.png','property','','images/nav/property_over.gif',1)"><img src="images/nav/property.gif" alt="" width="139" height="37" id="property"></a> 
+<a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('logo','','images/index/logo_2.png','rooms','','images/nav/rooms_over.gif',1)"><img src="images/nav/rooms.gif" alt="" width="139" height="37" id="rooms"></a> </div>
+<div id="footer"></div>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+body{margin: 0;background: #a69b7b;}
+
+#wrapper{max-width: 770px;margin: auto;height: 576px;background: url(../images/index/background.png);}
+
+#header,#navigation,#footer{width: 100%;}
+
+#header{height: 300px;background: #ccc;display: flex;justify-content: center;align-items: center;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<div id="wrapper">
+<div id="header">
+<img src="images/index/logo.png" alt="" id="logo">
+</div>
+<div id="navigation"></div>
+<div id="footer"></div>
+</div>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<link rel="stylesheet" href="css/style.css">
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<div id="wrapper">
+<div id="header"></div>
+<div id="navigation"></div>
+<div id="footer"></div>
+</div>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+function MM_findObj(n, d) { //v4.01
+var p,i,x; if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+function MM_nbGroup(event, grpName) { //v6.0
+var i,img,nbArr,args=MM_nbGroup.arguments;
+if (event == "init" && args.length > 2) {
+if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+nbArr[nbArr.length] = img;
+for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+if (!img.MM_up) img.MM_up = img.src;
+img.src = img.MM_dn = args[i+1];
+nbArr[nbArr.length] = img;
+} }
+} else if (event == "over") {
+document.MM_nbOver = nbArr = new Array();
+for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+if (!img.MM_up) img.MM_up = img.src;
+img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])?args[i+1] : img.MM_up);
+nbArr[nbArr.length] = img;
+}
+} else if (event == "out" ) {
+for (i=0; i < document.MM_nbOver.length; i++) { img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+} else if (event == "down") {
+nbArr = document[grpName];
+if (nbArr) for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+document[grpName] = nbArr = new Array();
+for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+if (!img.MM_up) img.MM_up = img.src;
+img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+nbArr[nbArr.length] = img;
+} }
+}
+
+function MM_preloadImages() { //v3.0
+var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+//-->
+</script>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<body class="homeBg" onload="MM_preloadImages('images/property_over.gif','images/property_overdown.gif','images/property_down.gif','images/rooms_over.gif','images/rooms_overdown.gif','images/rooms_down.gif','images/prices_over.gif','images/prices_overdown.gif','images/prices_down.gif','images/locations_over.gif','images/locations_overdown.gif','images/locations_down.gif','images/reservations_over.gif','images/reservations_overdown.gif','images/reservations_down.gif');">
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<table style="display: inline-table;" border="0" cellpadding="0" cellspacing="0" width="695">
+<!-- fwtable fwsrc="navigation.png" fwpage="頁面 1" fwbase="navigation.gif" fwstyle="Dreamweaver" fwdocid = "1733313107" fwnested="0" -->
+<tr>
+<td rowspan="2"><a href="javascript:;" onmouseout="MM_nbGroup('out');" onmouseover="MM_nbGroup('over','property','images/property_over.gif','images/property_overdown.gif',1);" onclick="MM_nbGroup('down','navbar1','property','images/property_down.gif',1);"><img name="property" src="images/property.gif" width="139" height="37" id="property" alt="" /></a></td>
+<td rowspan="2"><a href="javascript:;" onmouseout="MM_nbGroup('out');" onmouseover="MM_nbGroup('over','rooms','images/rooms_over.gif','images/rooms_overdown.gif',1);" onclick="MM_nbGroup('down','navbar1','rooms','images/rooms_down.gif',1);"><img name="rooms" src="images/rooms.gif" width="139" height="37" id="rooms" alt="" /></a></td>
+<td rowspan="2"><a href="javascript:;" onmouseout="MM_nbGroup('out');" onmouseover="MM_nbGroup('over','prices','images/prices_over.gif','images/prices_overdown.gif',1);" onclick="MM_nbGroup('down','navbar1','prices','images/prices_down.gif',1);"><img name="prices" src="images/prices.gif" width="139" height="37" id="prices" alt="" /></a></td>
+<td><img src="images/spacer.gif" width="139" height="1" alt="" /></td>
+<td rowspan="2"><a href="javascript:;" onmouseout="MM_nbGroup('out');" onmouseover="MM_nbGroup('over','locations','images/locations_over.gif','images/locations_overdown.gif',1);" onclick="MM_nbGroup('down','navbar1','locations','images/locations_down.gif',1);"><img name="locations" src="images/locations.gif" width="139" height="37" id="locations" alt="" /></a></td>
+</tr>
+<tr>
+<td rowspan="2"><a href="javascript:;" onmouseout="MM_nbGroup('out');" onmouseover="MM_nbGroup('over','reservations','images/reservations_over.gif','images/reservations_overdown.gif',1);" onclick="MM_nbGroup('down','navbar1','reservations','images/reservations_down.gif',1);"><img name="reservations" src="images/reservations.gif" width="139" height="37" id="reservations" alt="" /></a></td>
+</tr>
+<tr>
+<td colspan="3"><img src="images/spacer.gif" width="417" height="1" alt="" /></td>
+<td><img src="images/spacer.gif" width="139" height="1" alt="" /></td>
+</tr>
+</table>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+var p,i,x; if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('images/nav/property_over.gif','images/nav/rooms_over.gif')">
+<img src="images/nav/property.gif" alt="" id="Image1" onMouseOver="MM_swapImage('Image1','','images/nav/property_over.gif',1)" onMouseOut="MM_swapImgRestore()">
+<img src="images/nav/rooms.gif" alt="" id="Image2" onMouseOver="MM_swapImage('Image2','','images/nav/rooms_over.gif',1)" onMouseOut="MM_swapImgRestore()">
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<img src="images/nav/locations.gif" name="loc" alt="" onMouseOver="document.loc.src='images/nav/locations_over.gif'" onMouseOut="document.loc.src='images/nav/locations.gif'" onMouseDown="document.loc.src='images/nav/locations_down.gif'">
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<img src="images/nav/locations.gif" name="loc" alt="" onMouseOver="document.loc.src='images/nav/locations_over.gif'" onMouseOut="">
+
+2018/06/12--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+2018/06/07--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+body{background: url(images/bg/bg_intro.jpg) repeat-x;}
+.logo,.pic1,.pic2,.copyright{
+position: absolute;
+
+}
+.logo{left: 300px;top: 100px;z-index: 3;}
+.pic1{
+left: 37px;
+top: 112px;
+z-index: 1;
+}
+.pic2{
+left: 617px;
+top: 190px;
+z-index: 2;
+}
+.all{width: 800px;height: 600px;margin: auto;position: relative;}
+.copyright{left: 297px;
+top: 173px;}
+</style>
+</head>
+
+<body>
+<div class="all">
+<div class="logo"><img src="images/intro_logo.jpg" alt=""></div>
+<div class="pic1"><img src="images/intro_pic1.gif" alt=""></div>
+<div class="pic2"><img src="images/intro_pic2.gif" alt=""></div>
+<div class="copyright"><a href="main.html">輕設計 Light Design Studio</a> <br> Best : 1024 x 768px <br> Copyright &copy; 2018 ALAN CHEN Studio All rights reserved.</div>	
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+body{background: url(images/bg/bg_intro.jpg) repeat-x;}
+.logo,.pic1,.pic2{position: absolute;}
+.logo{left: 300px;top: 100px;z-index: 3;}
+.pic1{
+left: 37px;
+top: 112px;
+z-index: 1;
+}
+.pic2{
+left: 617px;
+top: 190px;
+z-index: 2;
+}
+.all{width: 800px;height: 600px;margin: auto;position: relative;}
+</style>
+</head>
+
+<body>
+<div class="all"><div class="logo"><img src="images/intro_logo.jpg" alt=""></div>
+<div class="pic1"><img src="images/intro_pic1.gif" alt=""></div>
+<div class="pic2"><img src="images/intro_pic2.gif" alt=""></div></div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+<style>
+body{background: url(images/bg/bg_intro.jpg) repeat-x;}
+.logo,.pic1,.pic2{position: absolute;}
+.logo{left: 300px;top: 100px;z-index: 3;}
+.pic1{
+left: 37px;
+top: 112px;
+z-index: 1;
+}
+.pic2{
+left: 617px;
+top: 190px;
+z-index: 2;
+}
+</style>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+.logo{left: 300px;top: 100px;position: absolute;}
+</style>
+</head>
+
+<body>
+<div class="logo"><img src="images/intro_logo.jpg" alt=""></div>
+<div class="pic1"><img src="images/intro_pic1.gif" alt=""></div>
+<div class="pic2"><img src="images/intro_pic2.gif" alt=""></div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+body { margin: 0; } 
+div#slider { overflow: hidden; }
+div#slider figure img { width: 20%; float: left; }
+div#slider figure { 
+position: relative;
+width: 500%;
+margin: 0;
+left: 0;
+text-align: left;
+font-size: 0;
+animation: 10s imgslide infinite; 
+}
+
+@keyframes imgslide {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+</style>
+</head>
+
+<body>
+<div id="slider">
+<figure>
+<img src="http://placeimg.com/2000/800" alt="">
+<img src="http://placeimg.com/2000/800/any" alt="">
+<img src="http://placeimg.com/2000/800/people" alt="">
+<img src="http://placeimg.com/2000/800/animal" alt="">
+<img src="http://placeimg.com/2000/800/tech" alt="">
+</figure>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<iframe src="Untitled-2.html" width="125" height="125" scrolling="no" frameborder="0"></iframe>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+body{margin: 0;}
+.box{width: 125px;height: 125px;background:lightgreen;
+animation: test 2s infinite alternate;
+animation-fill-mode: both;
+}
+
+
+@keyframes test{
+0%{background: url(source/photo05.jpg);}	
+33%{background: url(source/photo06.jpg);}	
+66%{background: url(source/photo07.jpg);}	
+100%{background: url(source/photo05.jpg);}	
+}	
+</style>
+</head>
+
+<body>
+<div class="box"></div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+@keyframes test{
+0%{
+background: url(source/photo05.jpg);
+/*	transform: translate(0,0) rotate(0deg) scale(1);*/
+}
+/*	50%{}*/
+100%{
+background: url(source/photo06.jpg);
+/*	transform: translate(600px,0) rotate(360deg) scale(1.5);*/
+}	
+}
+
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<style>
+.box{width: 200px;height: 200px;background:lightgreen;border-radius: 50%;
+animation: test 2s infinite alternate;
+animation-fill-mode: both;
+}
+
+
+@keyframes test{
+0%{transform: translate(0,0) rotate(0deg) scale(1);}
+/*	50%{}*/
+100%{transform: translate(600px,0) rotate(360deg) scale(1.5);}	
+}	
+</style>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<style>
+.box{width: 200px;height: 200px;background:lightgreen;border-radius: 50%;
+animation: test 1s infinite alternate;}
+
+
+@keyframes test{
+0%{margin: 0;}
+50%{margin-top: 200px;}
+100%{margin-left: 600px;}	
+}	
+</style>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+.box{width: 200px;height: 200px;background:lightgreen;border-radius: 50%;animation: test 3s;}
+
+
+@keyframes test{
+from{margin: 0;}
+
+to{margin-left: 600px;}	
+}
+
+
+</style>
+</head>
+
+<body>
+<div class="box">box</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<table>
+<tr>
+<td><img src="images/aside.gif" width="125" height="125" /></td>
+<td><img src="images/aside2.gif" alt="" width="125" height="125" /></td>
+</tr>
+<tr>
+<td>
+<video src="video/aside3.mp4" autoplay="autoplay" loop></video>
+</td>
+<td><img src="images/aside4.gif" alt="" width="125" height="125" /></td>
+</tr>
+</table>
+
+2018/06/07--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+2018/06/05--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<video src="video/aside3.mp4" autoplay loop></video>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+body{margin: 0;}
+ul{list-style-type: none;margin: 0;padding: 0;display: flex;justify-content: center;}
+ul li a{width: 176px;height: 60px;background: #ff0;display: block;background:url(source/layout_button.png);margin: 0 .5em;text-indent: -9999px;}
+ul li:nth-child(1) a{background-position: 0 -72px;}
+ul li:nth-child(2) a{background-position: -200px -72px;}
+ul li:nth-child(3) a{background-position: -400px -72px;}
+ul li:nth-child(4) a{background-position: -600px -72px;}
+ul li:nth-child(5) a{background-position: -800px -72px;}
+ul li:nth-child(1) a:hover{background-position: 0 -272px;}
+ul li:nth-child(2) a:hover{background-position: -200px -272px;}
+ul li:nth-child(3) a:hover{background-position: -400px -272px;}
+ul li:nth-child(4) a:hover{background-position: -600px -272px;}
+ul li:nth-child(5) a:hover{background-position: -800px -272px;}
+</style>
+</head>
+
+<body>
+<!--	ul>li*5>a-->
+<ul>
+<li><a href="">menu</a></li>
+<li><a href="">menu</a></li>
+<li><a href="">menu</a></li>
+<li><a href="">menu</a></li>
+<li><a href="">menu</a></li>
+</ul>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+ul li a{width: 176px;height: 60px;background: #ff0;display: block;background:url(source/layout_button.png);margin: 0 .5em;transition: all 3s;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<style>
+body{margin: 0;}
+ul{list-style-type: none;margin: 0;padding: 0;display: flex;justify-content: center;}
+ul li a{width: 176px;height: 60px;background: #ff0;display: block;background:url(source/layout_button.png);margin: 0 .5em;}
+ul li:nth-child(1) a{background-position: 0 -72px;}
+ul li:nth-child(2) a{background-position: -200px -72px;}
+ul li:nth-child(3) a{background-position: -400px -72px;}
+ul li:nth-child(4) a{background-position: -600px -72px;}
+ul li:nth-child(5) a{background-position: -800px -72px;}
+ul li:nth-child(1) a:hover{background-position: 0 -272px;}
+ul li:nth-child(2) a:hover{background-position: -200px -272px;}
+ul li:nth-child(3) a:hover{background-position: -400px -272px;}
+ul li:nth-child(4) a:hover{background-position: -600px -272px;}
+ul li:nth-child(5) a:hover{background-position: -800px -272px;}
+</style>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<style>
+body{margin: 0;}
+ul{list-style-type: none;margin: 0;padding: 0;display: flex;justify-content: center;}
+ul li a{width: 176px;height: 60px;background: #ff0;display: block;background:url(source/layout_button.png);margin: 0 .5em;}
+ul li:nth-child(1) a{background-position: 0 -72px;}
+ul li:nth-child(2) a{background-position: -200px -72px;}
+ul li:nth-child(3) a{background-position: -400px -72px;}
+ul li:nth-child(4) a{background-position: -600px -72px;}
+ul li:nth-child(5) a{background-position: -800px -72px;}
+ul li a:hover{background:gold;}
+</style>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<style>
+body{margin: 0;}
+ul{list-style-type: none;margin: 0;padding: 0;display: flex;justify-content: center;}
+ul li a{width: 176px;height: 60px;background: #ff0;display: block;}
+ul li:nth-child(1) a{background:url(source/layout_button.png) 0 -72px;}
+ul li a:hover{background:gold;}
+</style>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+body{margin: 0;}
+ul{list-style-type: none;margin: 0;padding: 0;}
+</style>
+</head>
+
+<body>
+<!--	ul>li*5>a-->
+<ul>
+<li><a href="">menu</a></li>
+<li><a href="">menu</a></li>
+<li><a href="">menu</a></li>
+<li><a href="">menu</a></li>
+<li><a href="">menu</a></li>
+</ul>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+ul>li*5>a
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://www.mozilla.org/zh-TW/firefox/developer/
+https://chrome.google.com/webstore/detail/design-grid-overlay/kmaadknbpdklpcommafmcboghdlopmbi?hl=zh-TW
+https://chrome.google.com/webstore/detail/whatruns/cmkdbmfndkfgebldhnkbfhlneefdaaip?hl=zh-TW
+https://chrome.google.com/webstore/detail/the-qr-code-extension/oijdcdmnjjgnnhgljmhkjlablaejfeeb?hl=zh-TW
+
+2018/06/05--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+2018/05/31--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+#footer ul{list-style-type: none;margin: 0;padding: 0;display: flex; justify-content:center;}
+#footer ul li a{color: #fff;text-decoration: none;padding: 0 1em; border-left: 1px solid;}
+#footer ul li:last-child a{border-right: 1px solid;}
+#footer ul li a:hover{background: #FFF; color: #000;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+#footer ul{list-style-type: none;margin: 0;padding: 0;display: flex;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<ul>
+<li><a href="">about</a></li>
+<li><a href="">news</a></li>
+<li><a href="">menu</a></li>
+<li><a href="">reservations</a></li>
+<li><a href="">contact</a></li>
+</ul>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+#nav ul li a{width: 132px;height: 38px;display: block;text-indent: -9999px;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+#nav ul{list-style-type: none;margin: 0;padding: 0;display: flex; justify-content:center;}
+#nav ul li a{width: 132px;height: 38px;display: block;}
+#nav ul li:nth-child(1) a{background:url(../images/nav/about_out.png);}
+#nav ul li:nth-child(2) a{background:url(../images/nav/news_out.png);}
+#nav ul li:nth-child(3) a{background:url(../images/nav/menu_out.png);}
+#nav ul li:nth-child(4) a{background:url(../images/nav/reservations_out.png);}
+#nav ul li:nth-child(5) a{background:url(../images/nav/contact_out.png);}
+
+#nav ul li:nth-child(1) a:hover{background:url(../images/nav/about_over.png);}
+#nav ul li:nth-child(2) a:hover{background:url(../images/nav/news_over.png);}
+#nav ul li:nth-child(3) a:hover{background:url(../images/nav/menu_over.png);}
+#nav ul li:nth-child(4) a:hover{background:url(../images/nav/reservations_over.png);}
+#nav ul li:nth-child(5) a:hover{background:url(../images/nav/contact_over.png);}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+#nav ul{list-style-type: none;margin: 0;padding: 0;display: flex; justify-content:center;}
+#nav ul li a{width: 132px;height: 38px;display: block;background: #ff0;}
+#nav ul li a:hover{background: #78FC6D;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+#nav ul{list-style-type: none;margin: 0;padding: 0;}
+#nav ul li a{width: 132px;height: 38px;display: block;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<div id="nav">
+<ul>
+<li><a href="">menu1</a></li>
+<li><a href="">menu2</a></li>
+<li><a href="">menu3</a></li>
+<li><a href="">menu4</a></li>
+<li><a href="">menu5</a></li>
+</ul>
+</div>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://www.autodraw.com/
+https://logo.squarespace.com/
+https://www.logogarden.com/
+
+2018/05/31--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+2018/05/29--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<style>
+html,body{height: 100%;margin: 0;}
+.wrapper{width: 100%;background: #ccc;height: 50%;
+/*display:grid; grid-template-columns:1fr 1fr 1fr 1fr;*/
+}
+.wrapper>div{width: calc(100%/4);float: left;}
+.box1{background: #f00;}
+.box2{background: #0f0;}
+.box3{background: #00f;}
+.box4{background: #0ff;}
+
+@media screen and (max-width: 768px) {
+/*.wrapper{grid-template-columns:1fr 1fr;}*/
+.wrapper>div{width: calc(100%/2);}
+}
+
+@media screen and (max-width: 360px) {
+/*.wrapper{grid-template-columns:1fr;}*/
+.wrapper>div{width: calc(100%/1);}
+}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+<div class="box1">BOX1</div>
+<div class="box2">BOX2</div>
+<div class="box3">BOX3</div>
+<div class="box4">BOX4</div>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+https://caniuse.com
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+html,body{height: 100%;margin: 0;}
+.wrapper{width: 100%;background: #ccc;height: 50%; display:grid; grid-template-columns:1fr 200px 3fr;}
+/*.wrapper>div{width: calc(100%/3);}*/
+.box1{background: #f00;}
+.box2{background: #0f0;}
+.box3{background: #00f;}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+<div class="box1">BOX1</div>
+<div class="box2">BOX2</div>
+<div class="box3">BOX3</div>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+html,body{height: 100%;}
+body{font-family: "微軟正黑體",'Bowlby One SC', cursive;}
+
+#container{width: 100%;}
+
+#header{width: 100%;background:#90EE90;}
+#wrapper{width:calc(100%/2);float: left;}
+#content{background: #90cc90;}
+#navigation{width:calc(100%/2);background: #00EE90;float: left;}
+#extra{width: calc(100%/2);background: #90EE00;float: left;}
+#footer{width: ;background:#90E1c0;clear: both;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+#header{width: 100%;background:#90EE90;}
+#wrapper{width:calc(100%/1);float: left;}
+#content{background: #90cc90;}
+#navigation{width:calc(100%/1);background: #00EE90;float: right;}
+#extra{width: calc(100%/1);background: #90EE00;float: left;}
+#footer{width: ;background:#90E1c0;clear: both;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+html,body{height: 100%;}
+body{font-family: "微軟正黑體",'Bowlby One SC', cursive;}
+
+#container{width: 100%;}
+
+#header{width: 100%;background:#90EE90;}
+#wrapper{width:33% ;float: left;}
+#content{background: #90cc90;}
+#navigation{width:33%;background: #00EE90;float: left;}
+#extra{width: 33%;background: #90EE00;float: left;}
+#footer{width: ;background:#90E1c0;clear: both;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+html,body{height: 100%;}
+body{font-family: 'Bowlby One SC', cursive;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div id="container">
+<div id="header"><h1>Header</h1></div>
+<div id="wrapper">
+<div id="content">
+<p><strong>1) Content here.</strong> column long long column very long fill fill fill long text text column text silly very make long very fill silly make make long make text fill very long text column silly silly very column long very column filler fill long make filler long silly very long silly silly silly long filler make column filler make silly long long fill very.</p>
+<p>very make make fill silly long long filler column long make silly silly column filler fill fill very filler text fill filler column make fill make text very make make very fill fill long make very filler column very long very filler silly very make filler silly make make column column </p>
+<p>fill long make long text very make long fill column make text very silly column filler silly text fill text filler filler filler make make make make text filler fill column filler make silly make text text fill make very filler column very </p>
+<p>column text long column make silly long text filler silly very very very long filler fill very fill silly very make make filler text filler text make silly text text long fill fill make text fill long text very silly long long filler filler fill silly long make column make silly long column long make very </p>
+</div>
+</div>
+<div id="navigation">
+<p><strong>2) Navigation here.</strong> long long fill filler very fill column column silly filler very filler fill fill filler text fill very silly fill text filler silly silly filler fill very make fill column text column very very column fill fill very silly column silly silly fill fill long filler </p>
+</div>
+<div id="extra">
+<p><strong>3) More stuff here.</strong> very text make long silly make text very very text make long filler very make column make silly column fill silly column long make silly filler column filler silly long long column fill silly column very </p>
+</div>
+<div id="footer">
+<p>Here it goes the footer</p>
+</div>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<div id="container">
+<div id="header"><h1>Header</h1></div>
+<div id="wrapper">
+<div id="content">
+<p><strong>1) Content here.</strong> column long long column very long fill fill fill long text text column text silly very make long very fill silly make make long make text fill very long text column silly silly very column long very column filler fill long make filler long silly very long silly silly silly long filler make column filler make silly long long fill very.</p>
+<p>very make make fill silly long long filler column long make silly silly column filler fill fill very filler text fill filler column make fill make text very make make very fill fill long make very filler column very long very filler silly very make filler silly make make column column </p>
+<p>fill long make long text very make long fill column make text very silly column filler silly text fill text filler filler filler make make make make text filler fill column filler make silly make text text fill make very filler column very </p>
+<p>column text long column make silly long text filler silly very very very long filler fill very fill silly very make make filler text filler text make silly text text long fill fill make text fill long text very silly long long filler filler fill silly long make column make silly long column long make very </p>
+</div>
+</div>
+<div id="navigation">
+<p><strong>2) Navigation here.</strong> long long fill filler very fill column column silly filler very filler fill fill filler text fill very silly fill text filler silly silly filler fill very make fill column text column very very column fill fill very silly column silly silly fill fill long filler </p>
+</div>
+<div id="extra">
+<p><strong>3) More stuff here.</strong> very text make long silly make text very very text make long filler very make column make silly column fill silly column long make silly filler column filler silly long long column fill silly column very </p>
+</div>
+<div id="footer"><p>Here it goes the footer</p></div>
+</div>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://blog.html.it/layoutgala/index.html
+
+2018/05/29--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+2018/05/24--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+@charset "utf-8";
+/* CSS Document */
+
+.container{
+max-width: 1000px;
+margin: auto;
+}
+
+header{width: 100%;background:url(../test2/header.png);height: 188px;display: flex; justify-content:flex-end; align-items:center;}
+
+header img{margin: 0 10px;}
+header img:last-child{margin-right: 50px;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+<div class="container">
+<header>
+<img src="test2/nav1.png" alt="">
+<img src="test2/nav2.png" alt="">
+<img src="test2/nav3.png" alt="">
+</header>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://chrome.google.com/webstore/detail/the-qr-code-extension/oijdcdmnjjgnnhgljmhkjlablaejfeeb?hl=zh-TW
+https://chrome.google.com/webstore/detail/whatruns/cmkdbmfndkfgebldhnkbfhlneefdaaip?hl=zh-TW
+https://chrome.google.com/webstore/detail/design-grid-overlay/kmaadknbpdklpcommafmcboghdlopmbi?hl=zh-TW
+
+2018/05/24--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+
+
+2018/05/22--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+body{
+font-family:"微軟正黑體",Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+font-size:100%;	
+}
+
+.container{
+max-width: 1200px;
+background: #ccc;
+margin: auto;
+}
+
+header,.slider,#banner,footer{width: 100%;}
+header{display: flex;}
+header .logo{width: 16.66666%;}
+.logo img,nav img,.slider img,#banner img,footer img{max-width: 100%;}
+header nav{width: 83.33334%;}
+
+#banner{display: flex;}
+#banner div{width: 33.33333%;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--meta:vp ihgrogihergoerihgergoerhgerghrgorhgrighrgherogihrherogherogihrgoirhgorihgrogherogherige-->
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="container">
+<!--<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, similique, ut, hic minus nesciunt in rerum unde numquam non iste earum voluptate dolores. Tenetur, doloremque qui repellat ullam temporibus est.</h1>
+
+<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, similique, ut, hic minus nesciunt in rerum unde numquam non iste earum voluptate dolores. Tenetur, doloremque qui repellat ullam temporibus est.</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, similique, ut, hic minus nesciunt in rerum unde numquam non iste earum voluptate dolores. Tenetur, doloremque qui repellat ullam temporibus est.</p>-->
+
+<header>
+<div class="logo">
+<img src="http://fakeimg.pl/200x150/?text=Logo_200x150" alt="">
+</div>
+<nav>
+<img src="http://fakeimg.pl/1000x150/?text=Nav_1000x150" alt="">
+</nav>
+</header>
+<div class="slider">
+<img src="http://fakeimg.pl/1200x500/?text=Slider_1200x500" alt="">
+</div>
+<div id="banner">
+<div class="ad1"><img src="http://fakeimg.pl/400x150/?text=Ad1_400x150" alt=""></div>
+<div class="ad2"><img src="http://fakeimg.pl/400x150/?text=Ad2_400x150" alt=""></div>
+<div class="ad3"><img src="http://fakeimg.pl/400x150/?text=Ad3_400x150" alt=""></div>
+</div>
+<footer>
+<img src="http://fakeimg.pl/1200x200/?text=Footer_1200x200" alt="">
+</footer>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+http://fakeimg.pl
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+body{
+font-family:"微軟正黑體",Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+font-size:100%;	
+}
+
+.container{
+max-width: 1200px;
+background: #ccc;
+margin: auto;
+}
+
+header,.slider,.banner,footer{width: 100%;}
+header{display: flex;}
+header .logo{width: 16.66666%;height: 100px;background: #f00;}
+.logo img{max-width: 100%;}
+header nav{width: 83.33334%;height: 100px;background: #00f;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<header>
+<div class="logo">
+<img src="http://fakeimg.pl/300x150/?text=Logo_300x150" alt="">
+</div>
+<nav></nav>
+</header>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+html,body{height: 100%;}
+body{display: flex; align-items:center; justify-content:center;}
+div{width: 30vw;height: 30vh;background: lightgreen; display: flex; align-items:center; justify-content:center;}
+h2{font-size: 5vw;}
+</style>
+</head>
+
+<body>
+<div class="box"><h2>分享美味 分享歡樂</h2></div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<style>
+.box{width: 50vw;height: 50vh;background: lightgreen;}
+</style>
+</head>
+
+<body>
+<div class="box">BOX</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+html,body{height: 100%;}
+body{display: flex; align-items:center; justify-content:center;}
+div{width: 300px;height: 300px;background: lightgreen; display: flex; align-items:center; justify-content:center;}
+</style>
+</head>
+
+<body>
+<div class="box">BOX</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+.all{width: 100%;height: 600px;background: #333;
+display: flex; justify-content:space-around; align-items:center;
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+div{
+width: 150px;height: 150px;	
+}	
+.all{width: 100%;height: 600px;background: #333;
+display: flex; justify-content:flex-start; align-items:flex-end;
+}
+.box1{background: #f00;}
+.box2{background: #0f0;}
+.box3{background: #00f;}	
+.box4{background: #ff0;}
+.box5{background: #f0f;}
+.box6{background: #0ff;}
+</style>
+</head>
+
+<body>
+<div class="all"><div class="box1">Box1</div>
+<div class="box2">Box2</div>
+<div class="box3">Box3</div> 
+<div class="box4">Box4</div>
+<div class="box5">Box5</div>
+<div class="box6">Box6</div></div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+div{
+width: 150px;height: 150px;	
+}	
+.box1{background: #f00;}
+.box2{background: #0f0;}
+.box3{background: #00f;}	
+.box4{background: #ff0;}
+.box5{background: #f0f;}
+.box6{background: #0ff;}
+</style>
+</head>
+
+<body>
+<div class="box1">Box1</div>
+<div class="box2">Box2</div>
+<div class="box3">Box3</div> 
+<div class="box4">Box4</div>
+<div class="box5">Box5</div>
+<div class="box6">Box6</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+div{
+width: 150px;height: 150px;
+/*float: left;*/	
+}
+.box1{background: #f00; margin:auto;}
+.box2{background: #0f0;float: left;}
+.box3{background: #00f;float: left;}
+.all{width: 100%;text-align: right;}
+.box4{background: #ff0;display: inline-block;}
+.box5{background: #f0f;display: inline-block;}
+.box6{background: #0ff;display: inline-block;}
+
+.clearfix{clear: both;}
+</style>
+</head>
+
+<body>
+<div class="box1">Box1</div>
+<div class="box2 clearfix">Box2</div>
+<div class="box3">Box3</div>
+<div class="all">
+<div class="box4 clearfix">Box4</div>
+<div class="box5">Box5</div>
+<div class="box6">Box6</div>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+div{
+width: 150px;height: 150px;
+/*float: left;*/
+
+}
+.box1{background: #f00; margin:auto;}
+.box2{background: #0f0;float: left;}
+.box3{background: #00f;float: left;}
+.all{width: 100%;}
+.box4{background: #ff0;display: inline-block;}
+.box5{background: #f0f;display: inline-block;}
+.box6{background: #0ff;display: inline-block;}
+
+.clearfix{clear: both;}
+</style>
+</head>
+
+<body>
+<div class="box1">Box1</div>
+<div class="box2 clearfix">Box2</div>
+<div class="box3">Box3</div>
+<div class="all">
+<div class="box4 clearfix">Box4</div>
+<div class="box5">Box5</div>
+<div class="box6">Box6</div>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+div{width: 150px;height: 150px;float: left;}
+.box1{background: #f00;}
+.box2{background: #0f0;}
+.box3{background: #00f;}
+.box4{background: #ff0;}
+.box5{background: #f0f;}
+.box6{background: #0ff;}
+
+.clearfix{clear: both;}
+</style>
+</head>
+
+<body>
+<div class="box1">Box1</div>
+<div class="box2 clearfix">Box2</div>
+<div class="box3">Box3</div>
+<div class="box4 clearfix">Box4</div>
+<div class="box5">Box5</div>
+<div class="box6">Box6</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+div{width: 150px;height: 150px;
+/*float: left;*/
+display: inline-block;
+/*margin:-5px;*/
+}
+.all{background: #ccc;width: auto;float: right;}
+.box1{background: #f00;}
+.box2{background: #0f0;}
+.box3{background: #00f;}
+.box4{background: #ff0;}
+.box5{background: #f0f;}
+.box6{background: #0ff;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+div{width: 150px;height: 150px;
+/*float: left;*/
+display: inline-block;
+/*margin:-5px;*/
+}
+.all{background: #ccc;width: 100%;text-align: center;}
+.box1{background: #f00;}
+.box2{background: #0f0;}
+.box3{background: #00f;}
+.box4{background: #ff0;}
+.box5{background: #f0f;}
+.box6{background: #0ff;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.box${Box$}*6
+
+2018/05/22--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+2018/05/17--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--meta:vp ihgrogihergoerihgergoerhgerghrgorhgrighrgherogihrherogherogihrgoirhgorihgrogherogherige-->
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="container">
+<!--<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, similique, ut, hic minus nesciunt in rerum unde numquam non iste earum voluptate dolores. Tenetur, doloremque qui repellat ullam temporibus est.</h1>
+
+<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, similique, ut, hic minus nesciunt in rerum unde numquam non iste earum voluptate dolores. Tenetur, doloremque qui repellat ullam temporibus est.</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, similique, ut, hic minus nesciunt in rerum unde numquam non iste earum voluptate dolores. Tenetur, doloremque qui repellat ullam temporibus est.</p>-->
+
+
+<header>
+<div class="logo"></div>
+<nav></nav>
+</header>
+<div class="slider"></div>
+<div id="banner">
+<div class="ad1"></div>
+<div class="ad2"></div>
+<div class="ad3"></div>
+</div>
+<footer></footer>
+</div>
+</body>
+</html>
+
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+body{
+font-family:"微軟正黑體",Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+font-size:100%;	
+}
+
+.container{
+max-width: 1200px;
+background: #ccc;
+margin: auto;
+}
+
+header,.slider,.banner,footer{width: 100%;}
+header{display: flex;}
+header .logo{width: 16.66666%;height: 100px;background: #f00;}
+header nav{width: 83.33334%;height: 100px;background: #00f;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+.container{
+max-width: 1200px;
+background: #ccc;
+margin: auto;
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+body{
+font-family:"微軟正黑體",Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+font-size:100%;	
+}
+
+.container{
+width: 1200px;
+background: #ccc;
+margin: auto;
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+display: block;
+}
+body {
+line-height: 1;
+}
+ol, ul {
+list-style: none;
+}
+blockquote, q {
+quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: '';
+content: none;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+body{
+font-family:"微軟正黑體",Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--meta:vp-->
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="container">
+<header>
+<div class="logo"></div>
+<nav></nav>
+</header>
+<div class="slider"></div>
+<div id="banner">
+<div class="ad1"></div>
+<div class="ad2"></div>
+<div class="ad3"></div>
+</div>
+<footer></footer>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.container>header>.logo+nav^.slider+#banner>.ad$*3^footer
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://960.gs/
+
+https://chrome.google.com/webstore/detail/design-grid-overlay/kmaadknbpdklpcommafmcboghdlopmbi?hl=zh-TW
+
+2018/05/17--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+
+2018/05/15--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+h${標題$}*6
+
+https://chrome.google.com/webstore/detail/whatruns/cmkdbmfndkfgebldhnkbfhlneefdaaip?hl=zh-TW
+
+2018/05/15--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2018/04/30--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://web.telegram.org/#/login
+https://trello.com/
+
+
+https://chrome.google.com/webstore/detail/enable-copy/lmnganadkecefnhncokdlaohlkneihio?hl=zh-TW
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.accordion.min.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.tabs.min.css" rel="stylesheet" type="text/css">
+<script src="jQueryAssets/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="jQueryAssets/jquery.ui-1.10.4.accordion.min.js" type="text/javascript"></script>
+<script src="jQueryAssets/jquery.ui-1.10.4.tabs.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="Accordion1">
+<h3><a href="#">區段 1</a></h3>
+<div>
+<p>內容 1</p>
+</div>
+<h3><a href="#">區段 2</a></h3>
+<div>
+<p>內容 2</p>
+</div>
+<h3><a href="#">區段 3</a></h3>
+<div>
+<p>內容 3</p>
+</div>
+</div>
+
+<div id="Tabs1">
+<ul>
+<li><a href="#tabs-1">Tab 1</a></li>
+<li><a href="#tabs-2">Tab 2</a></li>
+<li><a href="#tabs-3">Tab 3</a></li>
+</ul>
+<div id="tabs-1">
+<p>內容 1</p>
+</div>
+<div id="tabs-2">
+<p>內容 2</p>
+</div>
+<div id="tabs-3">
+<p>內容 3</p>
+</div>
+</div>
+
+
+<div id="Tabs2">
+<ul>
+<li><a href="#tabs-1">Tab 1</a></li>
+<li><a href="#tabs-2">Tab 2</a></li>
+<li><a href="#tabs-3">Tab 3</a></li>
+</ul>
+<div id="tabs-1">
+<p>內容 1</p>
+</div>
+<div id="tabs-2">
+<p>內容 2</p>
+</div>
+<div id="tabs-3">
+<p>內容 3</p>
+</div>
+</div>
+<script type="text/javascript">
+$(function() {
+$( "#Accordion1" ).accordion(); 
+});
+$(function() {
+$( "#Tabs1" ).tabs(); 
+$( "#Tabs2" ).tabs();
+});
+</script>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<link href="jquery-mobile/jquery.mobile.theme-1.3.0.min.css" rel="stylesheet" type="text/css">
+<link href="jquery-mobile/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/style.css">
+<script src="jquery-mobile/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div data-role="page" id="index">
+<div data-role="header">
+<h1>幸福食坊 Food Shop</h1>
+</div>
+<div data-role="content">
+
+
+<div class="ui-grid-a">
+<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px"><h1>WELCOME....</h1></div></div>
+<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px"><img class="rwd-img" src="http://placeimg.com/800/600" alt=""></div></div>
+</div><!-- /grid-a -->
+<div data-role="fieldcontain">
+<label for="email">電子郵件:</label>
+<input type="email" name="email" id="email" value="" />
+</div>
+<ul data-role="listview" data-inset="true" data-split-icon="arrow-l">
+<li><a href="http://google.com">
+<h3>郵件管理</h3>
+<p>Lorem ipsum</p>
+<span class="ui-li-count">5</span>
+<p class="ui-li-aside">新郵件</p>
+</a><a href="http://google.com/cse">預設</a></li>
+<li><a href="#">
+<h3>頁面</h3>
+<p>Lorem ipsum</p>
+<span class="ui-li-count">1</span>
+<p class="ui-li-aside">側邊</p>
+</a><a href="#">預設</a></li>
+<li><a href="#">
+<h3>頁面</h3>
+<p>Lorem ipsum</p>
+<span class="ui-li-count">1</span>
+<p class="ui-li-aside">側邊</p>
+</a><a href="#">預設</a></li>
+</ul>
+<div data-role="collapsible-set">
+<div data-role="collapsible">
+<h3>商品</h3>
+<p>上架：</p>
+<div data-role="fieldcontain">
+<label for="flipswitch">選項:</label>
+<div data-role="fieldcontain">
+<label for="month">月份:</label>
+<input type="month" name="month" id="month" value="" />
+</div>
+<select name="flipswitch" id="flipswitch" data-role="slider">
+<option value="off">關閉</option>
+<option value="on">開啟</option>
+</select>
+</div>
+
+</div>
+<div data-role="collapsible" data-collapsed="true">
+<h3>頁首</h3>
+<p>內容</p>
+<div data-role="fieldcontain">
+<label for="slider">值:</label>
+<input type="range" name="slider" id="slider" value="0" min="0" max="100" />
+</div>
+
+</div>
+<div data-role="collapsible" data-collapsed="true">
+<h3>頁首</h3>
+<p>內容</p>
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<div data-role="footer">
+<h4>頁尾</h4>
+</div>
+</div>
+
+
+<div data-role="page" id="news">
+<div data-role="header">
+<h1>頁首2</h1>
+</div>
+<div data-role="content">內容</div>
+<div data-role="footer">
+<h4>頁尾</h4>
+</div>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<link href="jquery-mobile/jquery.mobile.theme-1.3.0.min.css" rel="stylesheet" type="text/css">
+<link href="jquery-mobile/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/style.css">
+<script src="jquery-mobile/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div data-role="page" id="index">
+<div data-role="header">
+<h1>幸福食坊 Food Shop</h1>
+</div>
+<div data-role="content">
+
+
+<div class="ui-grid-a">
+<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:60px"><h1>WELCOME....</h1></div></div>
+<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:60px"><img class="rwd-img" src="http://placeimg.com/800/600" alt=""></div></div>
+</div><!-- /grid-a -->
+<div data-role="fieldcontain">
+<label for="email">電子郵件:</label>
+<input type="email" name="email" id="email" value="" />
+</div>
+<ul data-role="listview" data-inset="true" data-split-icon="arrow-l">
+<li><a href="http://google.com">
+<h3>郵件管理</h3>
+<p>Lorem ipsum</p>
+<span class="ui-li-count">5</span>
+<p class="ui-li-aside">新郵件</p>
+</a><a href="http://google.com/cse">預設</a></li>
+<li><a href="#">
+<h3>頁面</h3>
+<p>Lorem ipsum</p>
+<span class="ui-li-count">1</span>
+<p class="ui-li-aside">側邊</p>
+</a><a href="#">預設</a></li>
+<li><a href="#">
+<h3>頁面</h3>
+<p>Lorem ipsum</p>
+<span class="ui-li-count">1</span>
+<p class="ui-li-aside">側邊</p>
+</a><a href="#">預設</a></li>
+</ul> 
+
+
+
+
+
+</div>
+<div data-role="footer">
+<h4>頁尾</h4>
+</div>
+</div>
+
+
+<div data-role="page" id="news">
+<div data-role="header">
+<h1>頁首2</h1>
+</div>
+<div data-role="content">內容</div>
+<div data-role="footer">
+<h4>頁尾</h4>
+</div>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<link href="jquery-mobile/jquery.mobile.theme-1.3.0.min.css" rel="stylesheet" type="text/css">
+<link href="jquery-mobile/jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" type="text/css">
+<script src="jquery-mobile/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div data-role="page" id="page">
+<div data-role="header">
+<h1>頁首1</h1>
+</div>
+<div data-role="content">
+內容 <a href="#page2">頁面2</a>
+</div>
+<div data-role="footer">
+<h4>頁尾</h4>
+</div>
+</div>
+
+
+<div data-role="page" id="page2">
+<div data-role="header">
+<h1>頁首2</h1>
+</div>
+<div data-role="content">內容</div>
+<div data-role="footer">
+<h4>頁尾</h4>
+</div>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+</head>
+
+<body>
+<script>
+function testgo(msg){
+window.prompt(msg);	
+}
+</script>
+
+
+<button onClick="testgo('How R U???')">GO</button>
+
+</body>
+</html>
+
+
+2018/04/30--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+
+2018/04/27--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+
+<hr>
+
+<a href="http://google.com" title="點我&#010;得&#013;大獎">GOOGLE</a>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+bootstrap
+
+https://chrome.google.com/webstore/detail/black-menu-for-google/eignhdfgaldabilaaegmdfbajngjmoke?hl=zh-TW
+
+audits
+
+2018/04/27--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+2018/04/25--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://www.handicap-free.nat.gov.tw/Download/Detail/1418?Category=28
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<div class="pure-button-group" role="group"><a href="http://google.com" class="pure-button button-good"> <i class="fa fa-cog"></i> 確定</a>
+
+<button class="pure-button" onClick="location.href='http://google.com'"><i class="fa fa-facebook-square"></i> 取消</button></div>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:200">
+<!--[if lte IE 8]>
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+<!--<![endif]-->
+</head>
+
+<body>
+<a href="http://google.com" class="pure-button">Google</a>
+
+<button class="pure-button" onClick="location.href='http://google.com'">Google</button>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+
+<!--[if lte IE 8]>
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+<!--<![endif]-->
+</head>
+
+<body>
+<div class="pure-g">
+<div class="pure-u-1">.pure-u-1</div>
+
+
+
+<div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+.pure-u-1<br>.pure-u-md-1-2<br>.pure-u-lg-1-4
+</div>
+<div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+.pure-u-1<br>.pure-u-md-1-2<br>.pure-u-lg-1-4
+</div>
+<div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+.pure-u-1<br>.pure-u-md-1-2<br>.pure-u-lg-1-4
+</div>
+<div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+.pure-u-1<br>.pure-u-md-1-2<br>.pure-u-lg-1-4
+</div>
+
+
+
+<div class="pure-u-1 pure-u-md-3-4">.pure-u-1<br>.pure-u-md-3-4</div>
+<div class="pure-u-1 pure-u-md-1-4">.pure-u-1<br>.pure-u-md-1-4</div>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="pure-g">
+<div class="pure-u-1-3">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, sit molestiae tempore a debitis modi perferendis ex earum excepturi expedita odio impedit! Animi doloribus maiores cupiditate alias atque perferendis ipsam.</p>
+</div>
+<div class="pure-u-1-3">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, sit molestiae tempore a debitis modi perferendis ex earum excepturi expedita odio impedit! Animi doloribus maiores cupiditate alias atque perferendis ipsam.</p>
+</div>
+<div class="pure-u-1-3">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, sit molestiae tempore a debitis modi perferendis ex earum excepturi expedita odio impedit! Animi doloribus maiores cupiditate alias atque perferendis ipsam.</p>
+</div>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://html5boilerplate.com/
+
+sites.google.com
+
+2018/04/25--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2018/04/23--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+Yoast SEO
+
+2018/04/23--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2018/04/20--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+nimbus
+
+storefront
+
+2018/04/20--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+2018/04/18--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+contact form 7
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+@font-face {
+font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 100;
+src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff2) format('woff2'),
+url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.woff) format('woff'),
+url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Thin.otf) format('opentype');
+}
+@font-face {
+font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 300;
+src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff2) format('woff2'),
+url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.woff) format('woff'),
+url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Light.otf) format('opentype');
+}
+@font-face {
+font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 400;
+src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff2) format('woff2'),
+url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.woff) format('woff'),
+url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Regular.otf) format('opentype');
+}
+@font-face {
+font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 500;
+src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff2) format('woff2'),
+url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.woff) format('woff'),
+url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Medium.otf) format('opentype');
+}
+@font-face {
+font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 700;
+src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff2) format('woff2'),
+url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.woff) format('woff'),
+url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Bold.otf) format('opentype');
+}
+@font-face {
+font-family: 'Noto Sans TC';
+font-style: normal;
+font-weight: 900;
+src: url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff2) format('woff2'),
+url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.woff) format('woff'),
+url(//fonts.gstatic.com/ea/notosanstc/v1/NotoSansTC-Black.otf) format('opentype');
+}
+.alan{font-family: ‘Noto Sans TC’, sans-serif;}
+
+2018/04/18--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+2018/04/16--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+onetone
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+http://web1206.byethost22.com/food2/wp-admin/plugin-install.php?s=menu+icons&tab=search&type=term
+
+http://web1206.byethost22.com/food2/wp-admin/plugin-install.php?tab=plugin-information&plugin=smart-slider-3&TB_iframe=true&width=600&height=550
+
+https://chrome.google.com/webstore/detail/view-image/jpcmhcelnjdmblfmjabdeclccemkghjk?hl=zh-TW
+
+2018/04/16--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+2018/04/13--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<iframe src="http://web1206.byethost22.com/food/slider/index.html" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://filezilla-project.org/download.php?type=client
+[gallery link="file" columns="2" ids="34,33,32,31,30"]
+
+2018/04/13--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+2018/04/11--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+http://www.wix.com
+https://www.weebly.com/?lang=zh_TW
+https://www.strikingly.com/
+https://www.sxl.cn/
+
+2018/04/11--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+2018/04/09--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://mobirise.com/
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+//設定Mobile的定義(全小寫)
+var mobileAgent = new Array("iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", "webmate", "bada", "nokia", "lg", "ucweb", "skyfire");
+
+//讀取用戶的瀏覽器資料
+var browser = navigator.userAgent.toLowerCase();
+
+//檢查開始
+for (var i=0; i<mobileAgent.length; i++){
+if (browser.indexOf(mobileAgent[i])!=-1){
+alert('您好！您使用的系統是：'+mobileAgent[i]);
+
+//程式碼(轉址)
+if(mobileAgent[i]=="android"){
+location.href = 'index_m_android.html';
+}
+if(mobileAgent[i]=="iphone"){
+location.href = 'index_m_iphone.html';
+}
+
+//停止運行迴圈
+break;
+}
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<p>
+<script>
+var myAgent=navigator.userAgent;
+document.write(myAgent);
+</script>
+</p>
+
+2018/04/09--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2018/04/06--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="zh-TW">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>想想走透透-想飛Sky-享受旅行-想食Eat-享受美食-追求平安快樂的人生首頁</title>
+<meta name="Keywords" content="想想走透透,想飛Sky,享受旅行,想食Eat,享受美食,追求平安快樂的人生,享受一個人的快樂" />
+<meta name="Description" content="想想走透透是生活在地球上的某個人所遭遇到的追求享樂與平衡的故事點滴。" />
+<meta name="author" content="學習電腦的ALAN" />
+
+</head>
+
+<body>
+<!--layout wrapper-->
+<div id="wrapper">
+<!--header-->
+<div id="header">
+<img src="images/logo.gif" width="187" height="45" alt="想飛Sky_logo" />
+<h1>想想走透透-想飛Sky-享受旅行</h1>
+</div>
+<!--end header-->
+<!--nav-->
+<div id="nav">
+<ul>
+<li>About</li>
+<li>Notice</li>
+<li>Theme</li>
+<li>Photo</li>
+<li>Blog</li>
+<li>Fackbook</li>
+<li>Contact </li>
+</ul>
+</div>
+<!--end nav-->
+<!--leftbtn-->
+<div id="sidebar">
+<div id="menubtn">
+<ul>
+<li class="home"><a href="#"></a></li>
+<li class="photo"><a href="#"></a></li>
+</ul>
+</div>
+<div id="menu">
+<div id="menutop"></div>
+<div id="menumin">
+<ul class="menumyul">
+<li><a href="#">About</a></li>
+<li><a href="#">Notice</a></li>
+<li><a href="#">Theme</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Fackbook</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</div>
+<div id="menubon"></div>
+</div>
+</div>
+<!--end leftbtn-->
+<!--rightcontent-->
+<div id="content">
+<h1>～夢想起飛～</h1>
+<p>每一個角落都有獨特的故事，每個故事中必定有你有我。</p>
+<p> 每一個角落在不同角度拍攝下，呈現如此動人的面貌。</p>
+<p> 啟程吧～～是實現夢想的開始。</p>
+<p> 享受旅行後，每一個追求平安，快樂人生的夢想故事。</p>
+</div>
+<!--end rightcontent-->
+<!--footer-->
+<div id="footer">
+<p>想想走透透-想飛Sky-享受旅行-想食Eat-享受美食版權所有 Copyright All Rights Reserved. </p>
+<p> 台北市幸福之路 | TEL：(02)0520-1314　| E-mail：alan@gjun.tw</p>
+</div>
+<!--end footer-->
+</div>
+<!--end layout wrapper-->
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<script>
+function myphone(){
+var myScreen=screen.width;
+if(myScreen<=768){location.href='index4.html';}	
+}
+myphone();
+</script>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style2.css">
+<link rel="stylesheet" href="css/screen768.css">
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style2.css">
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<link rel="stylesheet" href="css/style2.css" media="screen">
+<link rel="stylesheet" href="css/screen768.css" media="screen and (max-width:768px)">
+<link rel="stylesheet" href="css/print.css" media="print">
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+@charset "utf-8";
+/* CSS Document */
+
+.header{
+height: auto;
+}
+
+.logo{
+position:relative;
+margin:0 auto;
+width:150px;
+}
+.logo a{
+display:block;
+width:150px;
+height:170px;
+background:url(../website/images/M2.png) no-repeat
+}
+.menu{
+float:none; /* 拿掉浮動 */
+} 
+.menu li {
+width:90%;
+float:none; /* float style */
+margin:0 auto 10px auto;	
+border-radius:3px;
+}
+.menu li a{
+width:100%;
+text-align:center;
+}
+.content,.sidebar{
+border:none;
+float: none; /* 拿掉浮動 */
+width: 100%; /* 百分比呈現寬度 */
+margin: 0;
+}
+.sidebar img{
+display: block;
+max-width:100%;
+height:auto;
+margin-bottom: 10px;
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+@charset "utf-8";
+/* CSS Document */
+*,*:before,*:after{
+box-sizing: border-box;
+}
+body{font-family:"微軟正黑體",Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;font-size: 100%;}
+
+.wrap {
+max-width: 960px;
+margin: 0 auto;
+}
+
+.header{
+position: relative;
+height: 350px;
+}
+
+
+
+.logo{ 
+position:absolute;
+top:30px;
+left:0px;
+}
+.logo a{
+display:block;
+width:250px;
+text-indent:-99999px;
+height:250px;
+background:url(../website/images/M1.png);
+}
+
+
+
+.menu{
+float:right;
+margin:30px 0 0 0;
+}
+.menu li{
+float:left;
+background:#3399FF;
+border-right:1px solid #fff;
+}
+.menu li a{
+color:#fff;
+display:block;
+width:100px;
+font-weight:bold;
+text-align:center;
+height:30px;
+line-height:30px;
+text-decoration:none;
+}
+
+
+
+
+.content{
+float: left;
+width: 75%;
+border:2px solid #000;
+padding: 10px
+}
+.content h2{
+font-weight: bold;
+font-size: 26px;
+padding: 30px 0 20px 0;
+}
+.content p{
+line-height: 1.8;
+letter-spacing: 1pt;
+padding: 0 0 30px 0;
+}
+
+
+.sidebar{
+float: right;
+width: 20%;
+border:2px solid #000;
+padding: 5px;
+margin-left: 5%;
+}
+.sidebar img{
+margin:0 0 10px 0;
+max-width: 100%;
+height: auto ;
+}
+
+.footer{
+clear: both;
+padding: 1em 0;
+text-align: center;
+}
+
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>幸福食坊 Food Shop</title>
+<link rel="stylesheet" href="css/reset.css">
+
+
+</head>
+
+<body>
+<div class="wrap">
+<div class="header">
+<h1 class="logo"><a href="#">公司LOGO</a></h1>
+<ul class="menu">
+<li><a href="#">公司簡介</a></li>
+<li><a href="#">專業服務</a></li>
+<li><a href="#">新聞與活動</a></li>
+<li><a href="#">活動花絮</a></li>
+<li><a href="#">聯繫我們</a></li>
+</ul>
+</div> 
+<div class="content">
+<h2>新聞標題</h2>
+<p>
+產業新聞 (2099-06-21 09:06) 
+</p>
+<p>
+當有足夠的人，都希望某一件事、都想要某一個商品，那麼你就有機會去做那個市場。而在撰寫產品描述之前，你必須找到人們真心「想要」或是「渴望」的那件事，以利你去撰寫產品的描述。
+</p>
+<p>
+如果你是在販售減肥的食品的業者，那麼你就需要在產品描述裡面，撰寫出讓想要減肥的人們感受得到，你的商品可以滿足這兩件重要的事情。像是GNC（一種蛋白質奶昔商品）在產品描述中提到，它可以「維持你減重的目標」（maintain your weight loss goals）、「幫助維持正常、更健康的卡路里水準」（help support normal, healthy cholesterol levels）、「健康的新陳代謝」（healthy metabolism），而正對減肥苦惱的消費者很有可能會被這些說詞打動。
+</p>
+</div>
+<div class="sidebar">
+<img src="website/images/1.jpg" alt="">
+<img src="website/images/1.jpg" alt="">
+<img src="website/images/1.jpg" alt="">
+</div>
+<div class="footer">
+Copyright© 2099 
+</div>
+</div>
+</body>
+</html>
+
+
+2018/04/06--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+2018/04/02--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+@charset "utf-8";
+/* CSS Document */
+*,*:before,*:after{
+box-sizing: border-box;
+}
+body{font-family:"微軟正黑體",Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;font-size: 100%;}
+
+.wrap {
+max-width: 960px;
+margin: 0 auto;
+}
+
+.header{
+position: relative;
+height: 350px;
+}
+@media (max-width: 768px){
+.header{
+height: auto;
+}
+}
+
+
+.logo{ 
+position:absolute;
+top:30px;
+left:0px;
+}
+.logo a{
+display:block;
+width:250px;
+text-indent:-99999px;
+height:250px;
+background:url(../website/images/M1.png);
+}
+@media (max-width: 768px) {
+.logo{
+position:relative;
+margin:0 auto;
+width:150px;
+}
+.logo a{
+display:block;
+width:150px;
+height:170px;
+background:url(../website/images/M2.png) no-repeat
+}	
+
+}
+
+
+.menu{
+float:right;
+margin:30px 0 0 0;
+}
+.menu li{
+float:left;
+background:#3399FF;
+border-right:1px solid #fff;
+}
+.menu li a{
+color:#fff;
+display:block;
+width:100px;
+font-weight:bold;
+text-align:center;
+height:30px;
+line-height:30px;
+text-decoration:none;
+}
+@media(max-width: 768px){
+.menu{
+float:none; /* 拿掉浮動 */
+} 
+.menu li {
+width:90%;
+float:none; /* float style */
+margin:0 auto 10px auto;	
+border-radius:3px;
+}
+.menu li a{
+width:100%;
+text-align:center;
+}
+}
+
+
+
+.content{
+float: left;
+width: 75%;
+border:2px solid #000;
+padding: 10px
+}
+.content h2{
+font-weight: bold;
+font-size: 26px;
+padding: 30px 0 20px 0;
+}
+.content p{
+line-height: 1.8;
+letter-spacing: 1pt;
+padding: 0 0 30px 0;
+}
+
+
+.sidebar{
+float: right;
+width: 20%;
+border:2px solid #000;
+padding: 5px;
+margin-left: 5%;
+}
+.sidebar img{
+margin:0 0 10px 0;
+max-width: 100%;
+height: auto ;
+}
+@media(max-width: 768px) {
+.content,.sidebar{
+border:none;
+float: none; /* 拿掉浮動 */
+width: 100%; /* 百分比呈現寬度 */
+margin: 0;
+}
+.sidebar img{
+display: block;
+max-width:100%;
+height:auto;
+margin-bottom: 10px;
+}
+}
+.footer{
+clear: both;
+padding: 1em 0;
+text-align: center;
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.content{
+float: left;
+width: 75%;
+border:2px solid #000;
+padding: 10px
+}
+.content h2{
+font-weight: bold;
+font-size: 26px;
+padding: 30px 0 20px 0;
+}
+.content p{
+line-height: 1.8;
+letter-spacing: 1pt;
+padding: 0 0 30px 0;
+}
+
+
+.sidebar{
+float: right;
+width: 20%;
+border:2px solid #000;
+padding: 5px;
+margin-left: 5%;
+}
+.sidebar img{
+margin:0 0 10px 0;
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.menu{
+float:right;
+margin:30px 0 0 0;
+}
+.menu li{
+float:left;
+background:#3399FF;
+border-right:1px solid #fff;
+}
+.menu li a{
+color:#fff;
+display:block;
+width:100px;
+font-weight:bold;
+text-align:center;
+height:30px;
+line-height:30px;
+text-decoration:none;
+}
+
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+.wrap {
+max-width: 960px;
+margin: 0 auto;
+}
+.header{
+position: relative;
+height: 350px;
+}
+.logo{ 
+position:absolute;
+top:30px;
+left:0px;
+}
+.logo a{
+display:block;
+width:250px;
+text-indent:-99999px;
+height:250px;
+background:url(../website/images/M1.png);
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+body{font-family:"微軟正黑體",Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;font-size: 100%;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<div class="wrap">
+<div class="header">
+<h1 class="logo"><a href="#">公司LOGO</a></h1>
+<ul class="menu">
+<li><a href="#">公司簡介</a></li>
+<li><a href="#">專業服務</a></li>
+<li><a href="#">新聞與活動</a></li>
+<li><a href="#">活動花絮</a></li>
+<li><a href="#">聯繫我們</a></li>
+</ul>
+</div> 
+<div class="content">
+<h2>新聞標題</h2>
+<p>
+產業新聞 (2099-06-21 09:06) 
+</p>
+<p>
+當有足夠的人，都希望某一件事、都想要某一個商品，那麼你就有機會去做那個市場。而在撰寫產品描述之前，你必須找到人們真心「想要」或是「渴望」的那件事，以利你去撰寫產品的描述。
+</p>
+<p>
+如果你是在販售減肥的食品的業者，那麼你就需要在產品描述裡面，撰寫出讓想要減肥的人們感受得到，你的商品可以滿足這兩件重要的事情。像是GNC（一種蛋白質奶昔商品）在產品描述中提到，它可以「維持你減重的目標」（maintain your weight loss goals）、「幫助維持正常、更健康的卡路里水準」（help support normal, healthy cholesterol levels）、「健康的新陳代謝」（healthy metabolism），而正對減肥苦惱的消費者很有可能會被這些說詞打動。
+</p>
+</div>
+<div class="sidebar">
+<img src="images/1.jpg" alt="">
+<img src="images/1.jpg" alt="">
+<img src="images/1.jpg" alt="">
+</div>
+<div class="footer">
+Copyright© 2099 
+</div>
+</div>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://code.jquery.com/
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<link rel="stylesheet" href="css/reset.css">
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+@charset "utf-8";
+/* CSS Document */
+
+/*CSS HACK(RESET)*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+display: block;
+}
+body {
+line-height: 1;
+}
+ol, ul {
+list-style: none;
+}
+blockquote, q {
+quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: '';
+content: none;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+/* CSS HACK(RESET) END */
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>幸福食坊 Food Shop</title>
+</head>
+
+<body>
+
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://cpanel.byethost.com/
+
+2018/04/02--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2018/03/30--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+img{width: 250px;}
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="js/jquery.cycle.all.js"></script>
+<script>
+$(document).ready(function(e) {
+$("#img_cycle").cycle({	//圖片已經可以輪播了
+
+fx:("turnUp"),	//"fx" 依據不同的外掛，會使用不同的名稱，如果想要找到其他的效果，可以在官網首頁下方點選 Effects Browser，就可以看到所有的效果了。
+timeout:300,	//照片停留時間 300 毫秒
+speed:3000,	//更換速度 3 秒
+pause:1,	//滑鼠移到相片上面時暫停： 1 為 true / 2 為 false
+random:1	//亂數： 1 為 true / 2 為 false
+
+});
+});
+</script>
+</head>
+
+<body>
+<div id="img_cycle">
+<script>
+for(var i=1;i<=15;i++){
+document.write("<img src='images/"+i+".jpg'>");
+}
+</script>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<script>
+function myphone(){
+var myscreen=screen.width;
+alert(myscreen);	
+if(myscreen<=640){location.href='testmobile.html';}
+}
+
+myphone();
+</script>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<script>
+function myphone(){
+var myscreen=screen.width;
+alert(myscreen);	
+}
+
+myphone();
+</script>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="js/jquery.cycle.all.js"></script>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+https://code.jquery.com/
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<script>
+for(var i=1;i<=15;i++){
+document.write("<img src='images/"+i+".jpg'>");
+}
+</script>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+http://flexslider.woothemes.com/index.html
+http://jquery.malsup.com/cycle/
+https://jssor.com/
+https://amazingslider.com/
+http://wowslider.com/
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+// JavaScript Document
+
+window.onload=function(){
+
+var num=1;
+var tNum=5;
+var duration=2000;
+
+run();
+document.getElementById("box").onmouseover=stopRun;
+document.getElementById("box").onmouseout=run;
+
+for(var i=1;i<=tNum;i++){
+document.getElementById("tab"+i).onclick=show;	
+document.getElementById("con"+i).style.display="none";
+}
+
+document.getElementById("con1").style.display="block";
+document.getElementById("tab1").className="now-tab";	
+
+function autoShow(){
+for(var i=1; i<=tNum; i++){
+document.getElementById("con"+i).style.display="none";
+document.getElementById("tab"+i).className="";
+}
+if(num<tNum){ num++;}else{ num=1;}
+document.getElementById("con"+num).style.display="block";
+document.getElementById("tab"+num).className="now-tab";
+}	
+
+function show(){
+num=this.id.substr(3)-1;	
+alert(num);
+autoShow();
+}
+
+function stopRun(){ clearInterval(myInterval); }
+
+function run(){ myInterval= setInterval(autoShow,duration); }
+
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+// JavaScript Document
+
+window.onload=function(){
+
+var num=1;
+var tNum=5;
+var duration=2000;
+
+run();
+document.getElementById("box").onmouseover=stopRun;
+document.getElementById("box").onmouseout=run;
+
+for(var i=1;i<=tNum;i++){
+document.getElementById("tab"+i).onclick=show;	
+}
+
+document.getElementById("con1").style.display="block";
+document.getElementById("tab1").className="now-tab";	
+
+function autoShow(){
+for(var i=1; i<=tNum; i++){
+document.getElementById("con"+i).style.display="none";
+document.getElementById("tab"+i).className="";
+}
+if(num<tNum){ num++;}else{ num=1;}
+document.getElementById("con"+num).style.display="block";
+document.getElementById("tab"+num).className="now-tab";
+}	
+
+function show(){
+num=this.id;	
+alert(num);
+}
+
+function stopRun(){ clearInterval(myInterval); }
+
+function run(){ myInterval= setInterval(autoShow,duration); }
+
+}
+
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+// JavaScript Document
+
+window.onload=function(){
+
+var num=1;
+var tNum=5;
+var duration=2000;
+
+run();
+document.getElementById("box").onmouseover=stopRun;
+document.getElementById("box").onmouseout=run;
+
+
+document.getElementById("con1").style.display="block";
+document.getElementById("tab1").className="now-tab";	
+
+function autoShow(){
+for(var i=1; i<=tNum; i++){
+document.getElementById("con"+i).style.display="none";
+document.getElementById("tab"+i).className="";
+}
+if(num<tNum){ num++;}else{ num=1;}
+document.getElementById("con"+num).style.display="block";
+document.getElementById("tab"+num).className="now-tab";
+}	
+
+function stopRun(){ clearInterval(myInterval); }
+
+function run(){ myInterval= setInterval(autoShow,duration); }
+
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+// JavaScript Document
+
+window.onload=function(){
+
+var num=1;
+var tNum=5;
+var duration=2000;
+
+run();
+document.getElementById("box").onmouseover=stopRun;
+document.getElementById("box").onmouseout=run;
+
+
+function autoShow(){
+for(var i=1; i<=tNum; i++){
+document.getElementById("con"+i).style.display="none";
+document.getElementById("tab"+i).className="";
+}
+if(num<tNum){ num++;}else{ num=1;}
+document.getElementById("con"+num).style.display="block";
+document.getElementById("tab"+num).className="now-tab";
+}
+
+
+
+function stopRun(){ clearInterval(myInterval); }
+
+function run(){ myInterval= setInterval(autoShow,duration); }
+
+}
+
+2018/03/30--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+2018/03/28--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+window.onload=function(){
+var num=1;
+var tNum=5;
+var duration=2000;
+
+
+run();
+
+
+function autoShow(){
+for(var i=1; i<=tNum; i++){
+document.getElementById("con"+i).style.display="none";
+document.getElementById("tab"+i).className="";
+}
+if(num<tNum){ num++;}else{ num=1;}
+document.getElementById("con"+num).style.display="block";
+document.getElementById("tab"+num).className="now-tab";
+}	
+
+
+function run(){ myInterval= setInterval( autoShow, duration);}
+
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+window.onload=function(){
+??????	
+}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<link rel="stylesheet" href="css/alan.css">
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<div class="tabPanel" id="box">
+<div class="tab-content" id="con1">
+<img src="images/001.jpg" width="450" height="200" alt="Photoshop">
+<div class="detail">
+<h1><a href="javascript:;">Photoshop</a></h1>
+<p>Photoshop是目前設計界最重要的軟體，想學習職業等級的影像處理技巧以及影像合成技巧嗎? 您不能錯過本課程喔！</p>
+<ul>
+<li><a href="javascript:;">數位影像色彩概念</a></li>
+<li><a href="javascript:;">圖層應用</a></li>
+</ul>
+</div>
+</div>
+<div class="tab-content" id="con2">
+<img src="images/002.jpg" width="450" height="200" alt="Illustrator">
+<div class="detail">
+<h1><a href="javascript:;">Illustrator</a></h1>
+<p>illustrator 是目前平面設計和插畫設計最重要的軟體，本課程有基本圖像繪製範例、印刷排版範例、名片設計範例、酷卡範例、DM排版範例、商業設計範例！上課實際操作每一個範例~現場練習~</p>
+</div>
+</div>
+<div class="tab-content" id="con3">
+<img src="images/003.png" width="450" height="200" alt="Dreamweaver">
+<div class="detail">
+<h1><a href="javascript:;">Dreamweaver</a></h1>
+<p>本課程是最基礎的網頁設計入門，使用目前業界網頁設計最專業且最普及的軟體 Dreamweaver。</p>
+</div>
+</div>
+<div class="tab-content" id="con4">
+<img src="images/004.jpg" width="450" height="200" alt="Javascript">
+<div class="detail">
+<h1><a href="javascript:;">Javascript</a></h1>
+<p>本課程是 JavaScript 的入門課程，為美術設計師量身打造的JavaScript程式設計課程，從最基本的指令語法講起，先讓您一步一步打好 JavaScript 的基礎。</p>
+</div>
+</div>
+<div class="tab-content" id="con5">
+<img src="images/005.jpg" width="450" height="200" alt="CSS">
+<div class="detail">
+<h1><a href="javascript:;">CSS</a></h1>
+<p>徹底改變您對網頁設計的觀念！所有網頁設計師必修的新學分！</p>
+<ul>
+<li><a href="javascript:;">CSS語法結構指令</a></li>
+<li><a href="javascript:;">圖形化區塊的應用</a></li>
+<li><a href="javascript:;">CSS定位排版</a></li>
+<li><a href="javascript:;">CSS排版實例應用</a></li>
+</ul>
+</div>
+</div>
+<ul class="listReset switch">
+<li><a href="javascript:;" id="tab1">Photoshop</a></li>
+<li><a href="javascript:;" id="tab2">Illustrator</a></li>
+<li><a href="javascript:;" id="tab3">Dreamweaver</a></li>
+<li><a href="javascript:;" id="tab4">Javascript</a></li>
+<li><a href="javascript:;" id="tab5">CSS</a></li>
+</ul>
+</div>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+.box{width: 125px;height: 125px;
+background-image:url(source/photo16.JPG),url(source/photo17.JPG),url(source/photo18.JPG),url(source/photo16.JPG);
+background-position:0 0,125px 0,250px 0,375px 0;
+background-repeat:no-repeat;
+animation:ani 6s infinite;
+}
+
+@-webkit-keyframes ani {
+0% { background-position:0 0,125px 0,250px 0,375px 0; }
+33% { background-position:-125px 0,0 0,125px 0,250px 0; }
+66% { background-position:-250px 0,-125px 0,0 0,125px 0; }
+100% { background-position:-375px 0,-250px 0,-125px 0,0 0; }
+}
+@-o-keyframes ani {
+0% { background-position:0 0,125px 0,250px 0,375px 0; }
+33% { background-position:-125px 0,0 0,125px 0,250px 0; }
+66% { background-position:-250px 0,-125px 0,0 0,125px 0; }
+100% { background-position:-375px 0,-250px 0,-125px 0,0 0; }
+}
+@-moz-keyframes ani {
+0% { background-position:0 0,125px 0,250px 0,375px 0; }
+33% { background-position:-125px 0,0 0,125px 0,250px 0; }
+66% { background-position:-250px 0,-125px 0,0 0,125px 0; }
+100% { background-position:-375px 0,-250px 0,-125px 0,0 0; }
+}
+@keyframes ani {
+0% { background-position:0 0,125px 0,250px 0,375px 0; }
+33% { background-position:-125px 0,0 0,125px 0,250px 0; }
+66% { background-position:-250px 0,-125px 0,0 0,125px 0; }
+100% { background-position:-375px 0,-250px 0,-125px 0,0 0; }
+}
+</style>
+</head>
+
+<body>
+<div class="box"></div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+.box{width: 100px;height: 100px;
+background:url(source/photo16.JPG);
+animation:ani 6s infinite;
+}
+
+@-webkit-keyframes ani {
+0% { background:url(source/photo16.JPG); }
+33% { background:url(source/photo17.JPG); }
+66% { background:url(source/photo18.JPG); }
+100% { background:url(source/photo16.JPG); }
+}
+@-o-keyframes ani {
+0% { background:url(source/photo16.JPG); }
+33% { background:url(source/photo17.JPG); }
+66% { background:url(source/photo18.JPG); }
+100% { background:url(source/photo16.JPG); }
+}
+@-moz-keyframes ani {
+0% { background:url(source/photo16.JPG); }
+33% { background:url(source/photo17.JPG); }
+66% { background:url(source/photo18.JPG); }
+100% { background:url(source/photo16.JPG); }
+}
+@keyframes ani {
+0% { background:url(source/photo16.JPG); }
+33% { background:url(source/photo17.JPG); }
+66% { background:url(source/photo18.JPG); }
+100% { background:url(source/photo16.JPG); }
+}
+</style>
+</head>
+
+<body>
+<div class="box"></div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+.box{width: 100px;height: 100px;background: #f00;
+animation:ani 3s;
+}
+
+@-webkit-keyframes ani {
+0% { background:#f00; }
+50% { background: #0f0; }
+100% { background:#00f; }
+}
+@-o-keyframes ani {
+0% { background:#f00; }
+50% { background: #0f0; }
+100% { background:#00f; }
+}
+@-moz-keyframes ani {
+0% { background:#f00; }
+50% { background: #0f0; }
+100% { background:#00f; }
+}
+@keyframes ani {
+0% { background:#f00; }
+50% { background: #0f0; }
+100% { background:#00f; }
+}
+</style>
+</head>
+
+<body>
+<div class="box"></div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.box{width: 100px;height: 100px;background: lightblue;animation:ani 1s 3s alternate infinite; animation-timing-function:ease-out;position: absolute;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+.box{width: 100px;height: 100px;background: lightblue;animation:ani 1s;position: absolute;}
+
+@-webkit-keyframes ani {
+from { left:0; }
+to { left:500px; }
+}
+@-o-keyframes ani {
+from { left:0; }
+to { left:500px; }
+}
+@-moz-keyframes ani {
+from { left:0; }
+to { left:500px; }
+}
+@keyframes ani {
+from { left:0; }
+to { left:500px; }
+}
+</style>
+</head>
+
+<body>
+<div class="box"></div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<iframe src="test.html" frameborder="0" scrolling="no"></iframe>
+
+
+<style>
+iframe{width: 125px;height: 125px;overflow: hidden;}
+</style>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<iframe src="test.html" frameborder="0"></iframe> 
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+<style>
+marquee{width: 125px;height: 125px;background:url(source/photo18.JPG);overflow: hidden;display: flex;}
+marquee>img{margin-left: -5px;}
+</style>
+</head>
+
+<body>
+<marquee>
+<img src="source/photo20.jpg" alt="">
+<img src="source/photo21.jpg" alt="">
+<img src="source/photo22.jpg" alt="">
+<img src="source/photo23.jpg" alt="">
+<img src="source/photo24.jpg" alt="">
+</marquee>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+marquee>img[src=source/photo$@20.jpg]*5
+
+2018/03/28--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2018/03/26--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<script>
+$(document).ready(function(){
+$('#SMALL img').click(function(){
+var n=$(this).attr('id');
+//window.alert(n);	
+$('#BIG').attr("src","images/car/"+n+".png");
+});	
+});
+</script>
+
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<script>
+$(document).ready(function(){
+$('#SMALL img').click(function(){
+var n=$(this).attr('id');
+window.alert(n);	
+});	
+});
+</script>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<script>
+$(document).ready(function(){
+$('#SMALL img').click(function(){
+window.alert("HELLO");	
+});	
+});
+</script>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+http://jquery.com/download/
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<style>
+#car{width: 100%; display: flex; flex-direction:column; align-items:center;}
+
+#BIG{width: 500px;}
+#SMALL img{width: 80px;}
+img{margin: 8px;}
+</style>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+div#car>img#BIG[src=images/car/car1.png]+#SMALL>img#car$[src=images/car/car$.png]*3
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+div#car>img#BIG[src=images/car/car1.png]+#SMALL>img[src=images/car/car$.png]*3
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+div#car>img#BIG+#SMALL>img*3
+
+2018/03/26--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+
+
+
+
+
+
+
+
+
+
+
+2018/03/23--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/index.css">
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+var p,i,x; if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('images/index/property_over.png','images/index/logo_1.png')">
+<div class="wrapper">
+<header>
+<div id="logo"><img id="photo" src="images/index/logo.png" alt=""></div>
+</header>
+<!--nav.menu>ul>li*5>a{menu$}-->
+<nav>
+<ul>
+<li><a href=""></a><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('photo','','images/index/logo_1.png','Image2','','images/index/property_over.png',1)"><img src="images/index/property_out.png" alt="" width="73" height="40" id="Image2"></a></li>
+<li><a href="">menu2</a></li>
+<li><a href="">menu3</a></li>
+<li><a href="">menu4</a></li>
+<li><a href="">menu5</a></li>
+</ul>
+</nav>
+<footer></footer>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+@charset "utf-8";
+/* CSS Document */
+
+.wrapper{max-width: 770px;height: 576px;background:url(../images/index/background.png);margin: auto;}
+
+header{width: 100%;height: 323px;display: flex; justify-content:center; align-items:center;padding-top: 80px;}
+
+nav{width: 100%;height: 75px;background: #333;}
+
+footer{width: 100%;height: 91px;background: #666;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+<div class="wrapper">
+<header>
+<div id="logo"><img src="images/index/logo.png" alt=""></div>
+</header>
+<!--nav.menu>ul>li*5>a{menu$}-->
+<nav>
+<ul>
+<li><a href="">menu1</a></li>
+<li><a href="">menu2</a></li>
+<li><a href="">menu3</a></li>
+<li><a href="">menu4</a></li>
+<li><a href="">menu5</a></li>
+</ul>
+</nav>
+<footer></footer>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+<div class="wrapper">
+<header>
+<div id="logo"><img src="images/index/logo.png" alt=""></div>
+</header>
+<nav></nav>
+<footer></footer>
+</div>
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.wrapper{max-width: 770px;height: 576px;background:url(../images/index/background.png);margin: auto;}
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+.wrapper>header+nav+footer
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>無標題文件</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+</body>
+</html>
+
+--------我是分隔線--------我是分隔線--------我是分隔線--------
+
+@charset "utf-8";
+/* CSS Document */
+
+/*CSS HACK(RESET)*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+display: block;
+}
+body {
+line-height: 1;
+}
+ol, ul {
+list-style: none;
+}
+blockquote, q {
+quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: '';
+content: none;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+/* CSS HACK(RESET) END */
+
+
+2018/03/23--------我是分隔線--------我是分隔線--------我是分隔線--------
+Published with Simplenote

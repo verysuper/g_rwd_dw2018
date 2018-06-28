@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+
+#header{text-align: center;font-size: 10mm;}
+#header img{display: none;}
+
+#nav{display: block;}
+
+#sidebar,#content{display: none;}
+
+.qr{display: block;}
