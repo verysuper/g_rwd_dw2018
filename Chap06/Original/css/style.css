@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+.container{max-width: 900px;margin: auto;}
+
+header,main,footer{width: 100%;}
+
+header{background: #f00;}
+main{background: #0f0;}
+footer{background: #00f;}
