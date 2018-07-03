@@ -1,0 +1,31 @@
+@charset "utf-8";
+body {
+	font-size: 100%;
+	color: #666;
+	line-height: 1.6em;
+	margin: 0px;
+}
+li {
+	font-size: 12px;
+	line-height: 1.6em;
+	color: #F06;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	list-style-type: square;
+	margin-left: 10px;
+}
+a:link {
+	color: #06C;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #F39;
+}
+a:hover {
+	text-decoration: none;
+	color: #F39;
+}
+a:active {
+	text-decoration: none;
+}

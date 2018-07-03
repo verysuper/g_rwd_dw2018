@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>相對位置圖層</title>
+<style type="text/css">
+#wrapper {
+	width: 750px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #F00;
+	position: relative;
+	height: 227px;
+}
+#apDiv1 {
+	position:absolute;
+	z-index:1;
+	left: 100px;
+	top: 150px;
+}
+</style>
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>相對位址圖層→使用DIV
+      <ul>
+        <li>插入寬750px、高77px之DIV(wrapper)，並使其置中(auto) </li>
+        <li>點選此DIV中→插入AP Div</li>
+        <li>點選此AP Div中→插入插入影像 dw.jpg</li>
+        <li>修改DIV(wrapper)之CSS定位屬性~position : relative</li>
+        <li>預覽測試：移動圖層位址、預覽網頁(F12)、縮放網頁視窗</li>
+    </ul></td>
+  </tr>
+</table>
+<div id="wrapper">
+  <div id="apDiv1"><img src="dw.jpg" width="400" height="77" /></div>
+</div>
+</body>
+</html>
